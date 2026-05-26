@@ -1,4 +1,7 @@
 import os
+import base64
+import uuid
+from datetime import datetime
 
 from flask import (
     Flask,
@@ -20,10 +23,16 @@ from model.pipeline import predict_image
 # =========================
 
 app = Flask(__name__)
-app.secret_key = 'mytone_secret_key_bebas_apa_aja'  
+app.secret_key = 'mytone_athenalyze_secure_key_2026'  
 
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+# =========================
+# GLOBAL VARIABLES DELETED
+# Variabel global ANALYZED_SEASON sudah dihapus total 
+# agar data laptop A tidak bocor ke laptop B.
+# =========================
 
 # =========================
 # DISCOVER
@@ -71,21 +80,53 @@ def analysis():
 
 @app.route('/analyze', methods=['POST'])
 def analyze_image():
+    filepath = None
+
+    # =====================
+    # OPTION 1: NORMAL FILE UPLOAD
+    # =====================
     image = request.files.get('image')
-    if not image:
-        return "No image uploaded", 400
+    if image and image.filename != '':
+        extension = os.path.splitext(image.filename)[1]
+        filename = f"{uuid.uuid4()}{extension}"
+        filepath = os.path.join(UPLOAD_FOLDER, filename)
+        image.save(filepath)
 
-    # SAVE IMAGE
-    filepath = os.path.join(UPLOAD_FOLDER, image.filename)
-    image.save(filepath)
+    # =====================
+    # OPTION 2: WEBCAM SELFIE
+    # =====================
+    else:
+        captured_image = request.form.get('captured_image')
+        if captured_image:
+            # REMOVE HEADER: data:image/png;base64,
+            image_data = captured_image.split(',')[1]
+            image_bytes = base64.b64decode(image_data)
+            
+            filename = f"selfie_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{uuid.uuid4().hex}.png"
+            filepath = os.path.join(UPLOAD_FOLDER, filename)
+            
+            with open(filepath, 'wb') as f:
+                f.write(image_bytes)
 
+    # =====================
+    # NO IMAGE RECEIVE
+    # =====================
+    if not filepath:
+        return "No image received", 400
+
+    # =====================
     # MODEL PREDICTION
+    # =====================
     predicted_season, confidence = predict_image(filepath)
 
-    # <-- 3. SIMPAN KE SESSION BROWSERS LAPTOP MASING-MASING
+    # =====================
+    # SAVE RESULT TO SESSION (🔒 AMAN & TERKUNCI PER USER)
+    # =====================
     session['analyzed_season'] = predicted_season
 
-    # REDIRECT TO RESULT
+    # =====================
+    # REDIRECT RESULT
+    # =====================
     return redirect(
         url_for(
             'result',
@@ -95,7 +136,7 @@ def analyze_image():
     )
 
 # =========================
-# ANALYSIS RESULT
+# RESULT
 # =========================
 
 @app.route('/result/<season>')
@@ -125,10 +166,9 @@ def gender(season):
 
 @app.route('/fashion')
 def fashion():
-    # <-- 4. AMBIL DARI SESSION LAPTOP YANG SEDANG MEMBUKA
+    # <-- 3. AMBIL DATA KHUSUS LAPTOP USER YANG SEDANG MEMBUKA
     user_season = session.get('analyzed_season', None)
 
-    # IF USER ALREADY DID ANALYSIS
     if user_season:
         return redirect(
             url_for(
@@ -137,7 +177,6 @@ def fashion():
             )
         )
 
-    # NO ANALYSIS YET ALWAYS SHOW SEASON PICKER
     return redirect(url_for('fashion_season'))
 
 # =========================
@@ -149,7 +188,7 @@ def fashion_season():
     return render_template('pages/fashion_season.html')
 
 # =========================
-# MANUAL SEASON SELECTION
+# MANUAL SEASON
 # =========================
 
 @app.route('/fashion/set-season/<season>')
@@ -157,7 +196,7 @@ def set_fashion_season(season):
     return redirect(url_for('gender', season=season))
 
 # =========================
-# FINAL FASHION RESULT
+# FINAL FASHION
 # =========================
 
 @app.route('/fashion/<gender>/<season>')
@@ -165,6 +204,7 @@ def fashion_result(gender, season):
     data = FASHION_RESULTS.get(gender, {}).get(season)
     if not data:
         return "Fashion result not found", 404
+
     return render_template(
         'pages/fashion.html',
         data=data,
@@ -181,7 +221,7 @@ def shop():
     return render_template('pages/shop.html', shop_data=SHOP_DATA)
 
 # =========================
-# LEGAL PAGES
+# LEGAL
 # =========================
 
 @app.route('/privacy')
@@ -196,8 +236,10 @@ def terms():
 def science():
     return render_template('pages/science.html')
 
+# =========================
+# RUN (PORT CONFIGURED FOR HUGGING FACE)
+# =========================
 if __name__ == '__main__':
-    # <-- 5. PASTIKAN PORT TETAP 7860 UNTUK HUGGING FACE
     app.run(
         host='0.0.0.0',
         port=7860,
