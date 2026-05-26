@@ -1,0 +1,73 @@
+{% extends 'layouts/base.html' %} {% block page_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/pages/gender.css') }}"
+/>
+{% endblock %} {% block content %}
+
+<!-- =========================
+     GENDER PAGE
+========================= -->
+
+<section class="gender-page">
+  <!-- HERO -->
+
+  <div class="gender-hero">
+    <h1>Select your gender</h1>
+
+    <p>
+      Scientific clarity starts with understanding your baseline. Choose the
+      option that best represents your physical profile.
+    </p>
+  </div>
+
+  <!-- OPTIONS -->
+
+  <div class="gender-options">
+    <!-- FEMALE -->
+
+    <a
+      href="{{ url_for('fashion_result', gender='female', season=season) }}"
+      class="gender-card"
+    >
+      <img
+        src="{{ url_for('static', filename='images/female.png') }}"
+        alt="Female"
+      />
+
+      <span> FEMALE </span>
+    </a>
+
+    <!-- MALE -->
+
+    <a
+      href="{{ url_for('fashion_result', gender='male', season=season) }}"
+      class="gender-card"
+    >
+      <img
+        src="{{ url_for('static', filename='images/male.png') }}"
+        alt="Male"
+      />
+
+      <span> MALE </span>
+    </a>
+  </div>
+
+  <!-- NEUTRAL -->
+
+  <div class="neutral-section">
+    <a
+      href="{{ url_for('fashion_result', gender='neutral', season=season) }}"
+      class="neutral-button"
+    >
+      PREFER NOT TO SAY
+    </a>
+
+    <p>
+      Gender-neutral analysis algorithms are applied when specific physiological
+      traits are not specified.
+    </p>
+  </div>
+</section>
+
+{% endblock %}

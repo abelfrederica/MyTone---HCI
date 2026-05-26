@@ -1,0 +1,528 @@
+/* =========================
+   1400px
+========================= */
+
+@media (max-width: 1400px) {
+  .opening-section,
+  .steps-section,
+  .transformation-section,
+  .analysis-hero-section,
+  .hero,
+  .cta {
+    gap: 50px;
+  }
+}
+
+/* =========================
+   1200px
+========================= */
+
+@media (max-width: 1200px) {
+  /* GLOBAL */
+
+  .opening-section,
+  .analysis-section,
+  .steps-section,
+  .transformation-section,
+  .shop-section,
+  .shop-hero-section,
+  .fashion-section,
+  .hero,
+  .cta,
+  .season-grid,
+  .gender-page {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  /* HERO */
+
+  .opening-section,
+  .hero,
+  .cta {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .opening-right img,
+  .cta-image img {
+    height: 420px;
+  }
+
+  /* SEASONS */
+
+  .season-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ANALYSIS */
+
+  .analysis-top {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* STEPS */
+
+  .steps-section {
+    grid-template-columns: 1fr;
+  }
+
+  /* TRANSFORMATION */
+
+  .transformation-section {
+    grid-template-columns: 1fr;
+  }
+
+  /* SHOP */
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* FASHION */
+
+  .fabric-layout,
+  .best-grid,
+  .seasonal-profile,
+  .sub-seasons,
+  .seasons-keys {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   1024px
+========================= */
+
+@media (max-width: 1024px) {
+  /* NAVBAR */
+
+  .navbar {
+    padding: 0 24px;
+  }
+
+  .navbar-menu {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  /* TYPOGRAPHY */
+
+  .opening-left h1,
+  .transform-left h2,
+  .gender-hero h1,
+  .shop-header-left h2,
+  .fashion-hero-left h1,
+  .analysis-header h1,
+  .seasonal-text h1,
+  .hero-text h1,
+  .cta-text h3 {
+    font-size: 42px;
+  }
+
+  /* OPENING */
+
+  .opening-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  /* SEASONS */
+
+  .season-card img {
+    height: 280px;
+  }
+
+  .card-content {
+    padding: 24px;
+  }
+
+  /* ANALYSIS */
+
+  .analysis-card,
+  .feature-card {
+    padding: 32px;
+  }
+
+  /* SHOP */
+
+  .shop-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .shop-hero-container {
+    height: 360px;
+  }
+
+  .shop-hero-content {
+    left: 30px;
+    max-width: 420px;
+  }
+
+  .shop-hero-content h1 {
+    font-size: 34px;
+  }
+
+  /* FASHION */
+
+  .portrait-image img {
+    height: 500px;
+  }
+
+  .beauty-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* TRANSFORMATION */
+
+  .transform-right img {
+    height: 280px;
+  }
+}
+
+/* =========================
+   768px
+========================= */
+
+@media (max-width: 768px) {
+  /* GLOBAL */
+
+  .opening-section,
+  .analysis-section,
+  .steps-section,
+  .transformation-section,
+  .shop-section,
+  .shop-hero-section,
+  .fashion-section,
+  .hero,
+  .cta,
+  .season-grid,
+  .gender-page {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* TYPOGRAPHY */
+
+  .opening-left h1,
+  .transform-left h2,
+  .gender-hero h1,
+  .shop-header-left h2,
+  .fashion-hero-left h1,
+  .analysis-header h1,
+  .seasonal-text h1,
+  .hero-text h1,
+  .cta-text h3 {
+    font-size: 34px;
+    line-height: 1.15;
+  }
+
+  .opening-left p,
+  .analysis-card p,
+  .feature-card p,
+  .step-content p,
+  .transform-left p,
+  .fashion-hero-left p,
+  .hero-desc,
+  .cta-text p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* BUTTON GROUP */
+
+  .opening-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .opening-buttons a,
+  .opening-buttons button {
+    width: 100%;
+  }
+
+  /* HERO IMAGE */
+
+  .opening-right img,
+  .cta-image img {
+    height: 320px;
+  }
+
+  /* =========================
+     SEASONS FIX
+  ========================= */
+
+  .season-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .season-card img {
+    height: 260px;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .card-header h3 {
+    font-size: 22px;
+  }
+
+  .season-card p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .palette span {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* ANALYSIS */
+
+  .analysis-features {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-card {
+    padding: 28px;
+  }
+
+  /* STEPS */
+
+  .steps-section {
+    gap: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .step-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 24px 0;
+  }
+
+  .step-content h3 {
+    font-size: 22px;
+  }
+
+  /* TRANSFORMATION */
+
+  .palette-colors {
+    flex-wrap: wrap;
+  }
+
+  .palette-colors span {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* SHOP */
+
+  .shop-hero-container {
+    height: 300px;
+  }
+
+  .shop-hero-content {
+    left: 20px;
+    right: 20px;
+    max-width: none;
+    padding: 20px;
+  }
+
+  .shop-hero-content h1 {
+    font-size: 28px;
+  }
+
+  .shop-hero-content p {
+    font-size: 14px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* FASHION */
+
+  .fashion-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .best-main-card {
+    min-height: 340px;
+  }
+
+  .fabric-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait-image img {
+    height: 420px;
+  }
+
+  .scientific-note,
+  .neutral-card,
+  .style-tip,
+  .beauty-card {
+    padding: 24px;
+  }
+
+  /* GENDER */
+
+  .gender-options {
+    grid-template-columns: 1fr;
+  }
+
+  .gender-card img {
+    height: 420px;
+  }
+}
+
+/* =========================
+   480px
+========================= */
+
+@media (max-width: 480px) {
+  /* TYPOGRAPHY */
+
+  .opening-left h1,
+  .transform-left h2,
+  .gender-hero h1,
+  .shop-header-left h2,
+  .fashion-hero-left h1,
+  .analysis-header h1,
+  .seasonal-text h1,
+  .hero-text h1,
+  .cta-text h3 {
+    font-size: 28px;
+  }
+
+  .shop-hero-content h1 {
+    font-size: 24px;
+  }
+
+  .analysis-card h3,
+  .step-content h3,
+  .style-tip h3,
+  .card-header h3 {
+    font-size: 20px;
+  }
+
+  /* GLOBAL */
+
+  .opening-section,
+  .analysis-section,
+  .steps-section,
+  .transformation-section,
+  .shop-section,
+  .shop-hero-section,
+  .fashion-section,
+  .hero,
+  .cta,
+  .season-grid,
+  .gender-page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* HERO */
+
+  .opening-right img,
+  .cta-image img {
+    height: 240px;
+  }
+
+  /* SEASONS */
+
+  .season-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .season-card img {
+    height: 220px;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .palette span {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* SHOP */
+
+  .shop-hero-container {
+    height: 240px;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .shop-hero-content {
+    padding: 16px;
+  }
+
+  .shop-label {
+    font-size: 10px;
+  }
+
+  .product-image img {
+    height: 220px;
+  }
+
+  /* FASHION */
+
+  .best-main-card {
+    min-height: 260px;
+  }
+
+  .portrait-image img {
+    height: 320px;
+  }
+
+  .fabric-card {
+    min-height: 220px;
+  }
+
+  /* TRANSFORMATION */
+
+  .transform-right img {
+    height: 220px;
+  }
+
+  /* GENDER */
+
+  .gender-card img {
+    height: 320px;
+  }
+}

@@ -1,0 +1,48 @@
+{% extends 'layouts/base.html' %} {% block page_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/pages/legal.css') }}"
+/>
+{% endblock %} {% block content %}
+
+<section class="legal-page">
+  <div class="legal-container">
+    <span class="legal-label"> SCIENTIFIC METHOD </span>
+
+    <h1>How The Analysis Works</h1>
+
+    <p class="legal-intro">
+      MyTone combines computer vision techniques and color harmony principles to
+      estimate seasonal palettes from facial imagery.
+    </p>
+
+    <div class="legal-block">
+      <h2>Image Processing</h2>
+
+      <p>
+        Uploaded facial images are processed through preprocessing,
+        normalization, and feature extraction pipelines.
+      </p>
+    </div>
+
+    <div class="legal-block">
+      <h2>Color Classification</h2>
+
+      <p>
+        The model evaluates undertone balance, contrast level, and color
+        consistency to determine seasonal categories.
+      </p>
+    </div>
+
+    <div class="legal-block">
+      <h2>Fashion Recommendation</h2>
+
+      <p>
+        Seasonal outcomes are mapped to curated palettes, fabrics, and styling
+        recommendations designed to harmonize with detected characteristics.
+      </p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,150 @@
+{% extends 'layouts/base.html' %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/season-detail.css') }}">
+{% endblock %}
+
+{% block content %}
+  <!-- Hero Section -->
+  <section class="seasonal-profile">
+    <div class="seasonal-text">
+      <span class="seasonal-label">
+          Seasonal Profile
+      </span>
+      <h1>The Winter Palette</h1>
+      <p>
+        A masterclass in high‑contrast clarity. Winter is defined by cool, jewel‑toned saturation and icy undertones 
+        that command presence through sharp visual precision. Unlike the soft transitions of Summer, Winter is bold and uncompromising.
+      </p>
+    </div>
+    <img src="/static/images/winter.png" alt="Winter Palette Portrait">
+  </section>
+
+  <!-- Undertone, Key Value, Key Metals -->
+  <section class="seasons-keys">
+    <div class="key-card">
+      <h3>THE UNDERTONE</h3>
+      <p><strong>Cool & Striking</strong>
+        Winter skin types possess blue or pink undertones. There is a total absence of golden or peach warmth, 
+        creating a vivid, crystalline clarity.
+      </p>
+    </div>
+
+    <div class="key-card">
+      <h3>KEY VALUE</h3>
+      <p><strong>High Contrast</strong>
+        The palette is defined by high saturation and luminescence. 
+        Vivid, high‑energy colors without grayness that command attention through depth.
+      </p>
+    </div>
+
+    <div class="key-card">
+      <h3>KEY METALS</h3>
+      <div class="key-swatches">
+        <div class="swatch-item">
+          <span class="swatch-circle platinumgray"></span>
+          <div class="swatch-label"><b>Platinum</b></div>
+        </div>
+        <div class="swatch-item">
+          <span class="swatch-circle silverfrost"></span>
+          <div class="swatch-label"><b>Silver</b></div>
+        </div>
+      </div>
+      <p>
+        Polished finishes and high‑reflectivity textures in cool metals best reflect the sharp, luminous quality of Winter.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sub-Season Spectrum -->
+  <div class="section-header">
+    <h2>The Sub-Season Spectrum</h2>
+  </div>
+  <section class="sub-seasons">
+    <div class="sub-season">
+      <h4>01 / SHADOW CORE</h4>
+      <h3>Deep Winter</h3>
+      <p>
+        Leaning towards the shadow, this palette features dark, intense colors like charcoal, burgundy, and deep plum.
+      </p>
+      <div class="swatches">
+        <span class="swatch charcoal"></span>
+        <span class="swatch burgundy"></span>
+        <span class="swatch navy"></span>
+        <span class="swatch plum"></span>
+      </div>
+      <img src="/static/images/winter_deep.png" alt="Winter Palette Portrait">
+    </div>
+
+    <div class="sub-season">
+      <img src="/static/images/winter_true.png" alt="Winter Palette Portrait">
+      <h4>02 / PURE FROST</h4>
+      <h3>True Winter</h3>
+      <p>
+        The core of the season. Pure, cool, and high‑contrast. 
+        Think key blue, stark white, and cobalt—crisp and uncompromising.
+      </p>
+      <div class="swatches">
+        <span class="swatch keyblue"></span>
+        <span class="swatch starkwhite"></span>
+        <span class="swatch cobalt"></span>
+      </div>
+    </div>
+
+    <div class="sub-season">
+      <h4>03 / LUMINOUS EDGE</h4>
+      <h3>Bright Winter</h3>
+      <p>
+        The intersection of Winter and Spring. High saturation and luminescence. 
+        Fuchsia and electric lime blaze with clarity.  
+        <h4>Clarity Level: Maximum</h4>
+      </p>
+      <div class="swatches">
+        <span class="swatch fuchsia"></span>
+        <span class="swatch electriclime"></span>
+        <span class="swatch cyan"></span>
+        <span class="swatch starkwhite"></span>
+      </div>
+      <img src="/static/images/winter_bright.png" alt="Winter Palette Portrait">
+    </div>
+  </section>
+
+  <!-- Winter Neutrals -->
+  <section class="winter-neutrals">
+    <div class="neutral-header">
+      <div class="neutral-text">
+        <h2>Winter Neutrals</h2>
+        <p>
+          The foundation of high‑contrast clarity. Pure black and stark white provide the essential anchor for Winter accents.
+        </p>
+      </div>
+      <div class="neutral-button">
+        <a href="{{ url_for('seasons') }}" class="btn-primary">Explore Others</a>
+      </div>
+    </div>
+
+    <div class="swatches2">
+      <div class="swatch-item"><span class="swatch2 pureblack"></span><div class="swatch-label">PURE BLACK</div></div>
+      <div class="swatch-item"><span class="swatch2 starkwhite"></span><div class="swatch-label">STARK WHITE</div></div>
+      <div class="swatch-item"><span class="swatch2 charcoal"></span><div class="swatch-label">CHARCOAL</div></div>
+      <div class="swatch-item"><span class="swatch2 midnightnavy"></span><div class="swatch-label">MIDNIGHT NAVY</div></div>
+      <div class="swatch-item"><span class="swatch2 platinumgray"></span><div class="swatch-label">PLATINUM GRAY</div></div>
+      <div class="swatch-item"><span class="swatch2 silverfrost"></span><div class="swatch-label">SILVER FROST</div></div>
+    </div>
+  </section>
+
+  <!-- Banner -->
+  <section class="banner">
+    <div class="banner-images">
+      <img src="/static/images/winter_banner.png" alt="Winter Aesthetic Banner" class="base-img">
+      <img src="/static/images/bannerG.png" alt="Overlay Banner" class="overlay-img">
+    </div>
+    <div class="banner-text">
+      <h2>Refining the Winter Aesthetic</h2>
+      <p>A Masterclass in High‑Contrast Luxury.</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+
+{% endblock %}

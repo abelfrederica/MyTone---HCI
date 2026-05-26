@@ -1,0 +1,378 @@
+/* =========================
+   ANALYSIS PAGE
+========================= */
+
+.analysis-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 60px 100px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.analysis-header {
+  max-width: 760px;
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.analysis-label {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.analysis-header h1 {
+  font-size: 40px;
+  line-height: 1.05;
+  font-weight: 400;
+  margin: 0 0 22px;
+  color: var(--secondary-color);
+}
+
+.analysis-header p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.analysis-content {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.guidelines-card {
+  background: var(--primary-color);
+  border: 1px solid #ece7e2;
+  padding: 34px;
+  min-height: 720px;
+}
+
+.upload-card {
+  background: var(--white);
+
+  border: 1px solid #ece7e2;
+
+  padding: 34px;
+
+  min-height: 720px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  transition: 0.3s ease;
+}
+
+.upload-card:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================
+   GUIDELINES
+========================= */
+
+.guidelines-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.guidelines-card h3 {
+  margin: 0 0 34px;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--secondary-color);
+}
+
+/* LIST */
+
+.guidelines-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.guidelines-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  color: var(--text-light);
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.guidelines-icon {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #e8e1da;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: var(--secondary-color);
+}
+
+.guidelines-list strong {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* IMAGE */
+
+.guidelines-image {
+  margin-top: 25px;
+  padding-top: 40px;
+}
+
+.guidelines-image img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius);
+}
+
+/* =========================
+   FORM
+========================= */
+
+.upload-card form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================
+   ICON
+========================= */
+
+.upload-icon {
+  font-size: 100px;
+  line-height: 1;
+  color: var(--text-light);
+  margin-bottom: 36px;
+  transition: var(--transition);
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.upload-title {
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 400;
+  margin-bottom: 8px;
+  color: var(--secondary-color);
+  transition: var(--transition);
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.upload-description {
+  max-width: 440px;
+  margin-bottom: 34px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-primary {
+  border: none;
+
+  background: #736960;
+
+  color: white;
+
+  padding: 16px 34px;
+
+  font-size: 12px;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* =========================
+   PREVIEW IMAGE
+========================= */
+
+.preview-image {
+  width: 100%;
+
+  max-width: 320px;
+
+  height: 320px;
+
+  object-fit: cover;
+
+  border-radius: var(--radius);
+
+  border: 2px solid #ece7e2;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  margin-bottom: 28px;
+
+  display: none;
+}
+
+/* =========================
+   SELECT FILE BUTTON
+========================= */
+
+#select-button {
+  margin-bottom: 0;
+}
+
+/* =========================
+   ANALYZE BUTTON
+========================= */
+
+.analyze-btn {
+  display: none;
+
+  width: auto;
+
+  min-width: 220px;
+
+  margin-top: 10px;
+
+  margin-bottom: 28px;
+}
+
+.analyze-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.upload-status {
+  display: none;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #a79f98;
+}
+
+/* =========================
+   UPLOADED STATE
+========================= */
+
+.upload-card.uploaded .upload-icon,
+.upload-card.uploaded .upload-title,
+.upload-card.uploaded .upload-description {
+  display: none;
+}
+
+/* HIDE SELECT BUTTON AFTER UPLOAD */
+
+.upload-card.uploaded #select-button {
+  display: none;
+}
+
+/* SHOW STATUS AFTER UPLOAD */
+
+.upload-card.uploaded .upload-status {
+  display: block;
+}
+
+/* =========================
+   LOADING BAR
+========================= */
+
+.loading-wrapper {
+  width: 360px;
+  height: 4px;
+  background: var(--primary-color);
+  margin-bottom: 10px;
+  overflow: hidden;
+  display: none;
+}
+
+.loading-bar {
+  width: 0%;
+  height: 100%;
+  background: var(--secondary-color);
+  transition: width 3s ease;
+}
+
+/* SHOW AFTER UPLOAD */
+
+.upload-card.uploaded .loading-wrapper {
+  display: block;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .analysis-content {
+    grid-template-columns: 1fr;
+  }
+
+  .guidelines-card,
+  .upload-card {
+    min-height: auto;
+  }
+
+  .analysis-section {
+    padding: 40px 20px 80px;
+  }
+
+  .analysis-header h1 {
+    font-size: 32px;
+  }
+
+  .preview-image {
+    height: 260px;
+  }
+
+  .loading-wrapper {
+    width: 100%;
+  }
+}

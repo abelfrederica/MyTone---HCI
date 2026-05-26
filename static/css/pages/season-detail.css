@@ -1,0 +1,589 @@
+/* =========================
+   SEASON DETAIL PAGE
+========================= */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  line-height: 1.7;
+}
+
+section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.seasonal-profile,
+.seasons-keys,
+.sub-seasons,
+.autumn-neutrals,
+.spring-neutrals,
+.summer-neutrals,
+.winter-neutrals,
+.banner,
+.section-header {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  box-sizing: border-box;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.seasonal-profile {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 80px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.seasonal-text {
+  max-width: 650px;
+}
+
+.seasonal-text h1 {
+  font-size: 40px;
+  line-height: 1.05;
+  font-weight: 400;
+  margin: 0 0 28px;
+  color: var(--secondary-color);
+}
+
+.seasonal-text p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--text-light);
+  max-width: 580px;
+}
+
+.seasonal-profile img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+/* =========================
+   SMALL LABEL
+========================= */
+
+.seasonal-label {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-light);
+}
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-header {
+  margin-bottom: 30px;
+}
+
+.section-header h2 {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+  color: var(--secondary-color);
+}
+
+/* =========================
+   KEYS SECTION
+========================= */
+
+.seasons-keys {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding-top: 30px;
+  padding-bottom: 70px;
+  position: relative;
+}
+
+/* long top line */
+.seasons-keys::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--container-padding);
+  right: var(--container-padding);
+  height: 1px;
+  background: var(--border-color);
+}
+
+/* short lines */
+.key-card {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.key-card h3 {
+  margin: 0 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--text-light);
+}
+
+.key-card strong {
+  display: block;
+  margin-bottom: 14px;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+
+  color: var(--secondary-color);
+}
+
+.key-card p {
+  margin: 0;
+
+  color: var(--text-light);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* =========================
+   KEY METALS
+========================= */
+
+.key-swatches {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.key-swatches .swatch-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.swatch-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.key-swatches .swatch-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+/* =========================
+   SUB SEASONS
+========================= */
+
+.sub-seasons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-bottom: 80px;
+}
+
+.sub-season {
+  background: var(--primary-color);
+  padding: 28px;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sub-season h4 {
+  margin: 0 0 15px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-light);
+}
+
+.sub-season h3 {
+  margin: 0 0 15px;
+  font-size: 24px;
+  line-height: 1.15;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.sub-season p {
+  margin: 0 0 10px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--secondary-color);
+}
+
+.sub-season p {
+  flex-grow: 1;
+}
+
+.sub-season img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 0;
+  margin-bottom: 24px;
+}
+
+/* =========================
+   SWATCHES
+========================= */
+
+.swatches {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 32px;
+}
+
+.swatch {
+  width: 34px;
+  height: 34px;
+  border-radius: 2px;
+}
+
+/* =========================
+   NEUTRALS
+========================= */
+
+.autumn-neutrals,
+.spring-neutrals,
+.summer-neutrals,
+.winter-neutrals {
+  padding-bottom: 90px;
+}
+
+.neutral-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.neutral-text h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--secondary-color);
+}
+
+.neutral-text p {
+  margin: 0;
+  max-width: 480px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+.neutral-button button {
+  padding: 12px 22px;
+  border: none;
+  background: var(--secondary-color);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.neutral-button button:hover {
+  opacity: 0.9;
+}
+
+.swatches2 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.swatch-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.key-swatches .swatch-item {
+  flex-direction: row;
+  align-items: center;
+}
+
+
+.key-swatches .swatch-label {
+  margin: 0;
+  line-height: 1;
+}
+
+.swatch2 {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+.swatch-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+/* =========================
+   BANNER
+========================= */
+
+.banner {
+  position: relative;
+  padding-bottom: 120px;
+}
+
+.banner-images {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+}
+
+.base-img,
+.overlay-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-text {
+  position: absolute;
+  left: 90px;
+  bottom: 170px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px 60px;
+  max-width: 560px;
+}
+
+.banner-text h2 {
+  font-size: 16px;
+  margin-bottom: 0px;
+  font-weight: 400;
+  color: var(--text-light);
+}
+
+.banner-text p {
+  margin-bottom: 0;
+  font-size: 16px;
+  color: var(--text-light);
+}
+
+/* =========================
+   AUTUMN COLORS
+========================= */
+
+.oatmeal {
+  background: #e6d3b3;
+}
+.sand {
+  background: #c2b280;
+}
+.espresso {
+  background: #4b3832;
+}
+.deepteal {
+  background: #014d4e;
+}
+.forest {
+  background: #228b22;
+}
+.mahogany {
+  background: #4a2c2a;
+}
+.olive {
+  background: #808000;
+}
+.beige {
+  background: #f5f5dc;
+}
+.brown {
+  background: #8b4513;
+}
+.rust {
+  background: #b7410e;
+}
+.mustard {
+  background: #ffdb58;
+}
+.burgundy {
+  background: #800020;
+}
+.copper {
+  background: #b87333;
+}
+.bronze {
+  background: #cd7f32;
+}
+
+/* =========================
+   SPRING COLORS
+========================= */
+
+.brightpink {
+  background: #ff5fa2;
+}
+.turquoise {
+  background: #40e0d0;
+}
+.yellow {
+  background: #ffd700;
+}
+.green {
+  background: #3cb371;
+}
+.apricot {
+  background: #fbceb1;
+}
+.honey {
+  background: #f6c555;
+}
+.warmgreen {
+  background: #9acd32;
+}
+.peach {
+  background: #ffe5b4;
+}
+.aqua {
+  background: #00ffff;
+}
+.lightyellow {
+  background: #ffffe0;
+}
+.paleblue {
+  background: #add8e6;
+}
+.cream {
+  background: #fffdd0;
+}
+.tan {
+  background: #d2b48c;
+}
+.warmgrey {
+  background: #a49f91;
+}
+.ivory {
+  background: #fffff0;
+}
+.camel {
+  background: #c19a6b;
+}
+
+/* =========================
+   SUMMER COLORS
+========================= */
+
+.lavender {
+  background: #e6e6fa;
+}
+.pink {
+  background: #ffc0cb;
+}
+.raspberry {
+  background: #e30b5d;
+}
+.spruce {
+  background: #2e8b57;
+}
+.chambray {
+  background: #3a6073;
+}
+.navy {
+  background: #000080;
+}
+.gray {
+  background: #808080;
+}
+.mauve {
+  background: #996666;
+}
+.darkblue {
+  background: #00008b;
+}
+.coolgray {
+  background: #8c92ac;
+}
+.softbone {
+  background: #e3dac9;
+}
+.deepnavy {
+  background: #1a2a6c;
+}
+.pebble {
+  background: #b0a99f;
+}
+.slate {
+  background: #708090;
+}
+.pearlgray {
+  background: #d8d8d8;
+}
+.silver {
+  background: #c0c0c0;
+}
+.whitegold {
+  background: #f8f8f0;
+}
+
+/* =========================
+   WINTER COLORS
+========================= */
+
+.pureblack {
+  background: #000000;
+}
+.starkwhite {
+  background: #ffffff;
+}
+.charcoal {
+  background: #36454f;
+}
+.midnightnavy {
+  background: #191970;
+}
+.platinumgray {
+  background: #e5e4e2;
+}
+.silverfrost {
+  background: #c0c0c0;
+}
+.plum {
+  background: #8e4585;
+}
+.keyblue {
+  background: #1e90ff;
+}
+.cobalt {
+  background: #0047ab;
+}
+.fuchsia {
+  background: #ff00ff;
+}
+.electriclime {
+  background: #ccff00;
+}
+.cyan {
+  background: #00ffff;
+}

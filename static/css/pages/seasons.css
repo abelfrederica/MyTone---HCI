@@ -1,0 +1,310 @@
+/* =========================
+   SEASONS PAGE
+========================= */
+
+/* HERO */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+  margin: var(--section-border) var(--web-border);
+  padding: 40px;
+}
+
+.hero-text {
+  max-width: 620px;
+}
+
+/* LABEL */
+
+.small-title {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  font-weight: 400;
+}
+
+/* TITLE */
+.hero-text h1 {
+  font-size: 40px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+/* DESCRIPTION */
+.hero-desc {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+/* HERO IMAGE */
+.hero-image img {
+  width: 100%;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+/* =========================
+   SEASON GRID
+========================= */
+
+.season-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  padding: 40px;
+  margin: var(--section-border) var(--web-border);
+}
+
+/* CARD */
+
+.season-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+/* =========================
+   CARD LINK
+========================= */
+
+.season-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.season-link:hover .season-card {
+  transform: translateY(-5px);
+}
+
+/* IMAGE */
+
+.season-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+/* CONTENT */
+
+.card-content {
+  padding: 30px;
+}
+
+/* HEADER */
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+/* TITLE */
+
+.card-header h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+/* BADGE */
+
+.card-header span {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.06);
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+}
+
+/* TEXT */
+
+.season-card p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 24px;
+}
+
+/* PALETTE */
+
+.palette {
+  display: flex;
+  gap: 8px;
+}
+
+.palette span {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* =========================
+   SPRING COLORS
+========================= */
+
+.spring .palette span:nth-child(1) {
+  background: #f4cb25;
+}
+
+.spring .palette span:nth-child(2) {
+  background: #ff925f;
+}
+
+.spring .palette span:nth-child(3) {
+  background: #8ce3a0;
+}
+
+.spring .palette span:nth-child(4) {
+  background: #73c3cf;
+}
+
+/* =========================
+   SUMMER COLORS
+========================= */
+
+.summer .palette span:nth-child(1) {
+  background: #b8cbe8;
+}
+
+.summer .palette span:nth-child(2) {
+  background: #d8c8d7;
+}
+
+.summer .palette span:nth-child(3) {
+  background: #c8a5a5;
+}
+
+.summer .palette span:nth-child(4) {
+  background: #7a8797;
+}
+
+/* =========================
+   AUTUMN COLORS
+========================= */
+
+.autumn .palette span:nth-child(1) {
+  background: #9d4f14;
+}
+
+.autumn .palette span:nth-child(2) {
+  background: #597f35;
+}
+
+.autumn .palette span:nth-child(3) {
+  background: #d46363;
+}
+
+.autumn .palette span:nth-child(4) {
+  background: #e0ac20;
+}
+
+/* =========================
+   WINTER COLORS
+========================= */
+
+.winter .palette span:nth-child(1) {
+  background: #1013a8;
+}
+
+.winter .palette span:nth-child(2) {
+  background: #8d00a9;
+}
+
+.winter .palette span:nth-child(3) {
+  background: #000000;
+}
+
+.winter .palette span:nth-child(4) {
+  background: #ff1111;
+}
+
+/* =========================
+   CTA SECTION
+========================= */
+
+.cta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+  padding: 80px 40px;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  margin: var(--section-border) var(--web-border);
+}
+
+/* LEFT */
+
+.cta-text {
+  max-width: 620px;
+}
+
+.cta-text .small-title {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  font-weight: bold;
+}
+
+/* TITLE */
+
+.cta-text h3 {
+  font-size: 40px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+/* DESCRIPTION */
+.cta-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  max-width: 560px;
+}
+
+/* BUTTON */
+.cta-text button {
+  padding: 13px 64px;
+  border: none;
+  border-radius: 999px;
+  background: var(--secondary-color);
+  color: var(--white);
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.cta-text button:hover {
+  background: var(--text-light);
+  transform: translateY(-2px);
+}
+
+/* IMAGE */
+.cta-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius);
+  object-fit: cover;
+  display: block;
+}

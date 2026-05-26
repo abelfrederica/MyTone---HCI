@@ -1,0 +1,284 @@
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+  margin-left: var(--sidebar-width);
+  padding-top: var(--navbar-height);
+  min-height: 100vh;
+  transition: var(--transition);
+}
+
+/* SIDEBAR CLOSED CONTENT */
+
+.main-content.full {
+  margin-left: 0;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--navbar-height);
+  background: var(--background-color);
+  box-shadow: 0 0.5px 15px rgba(0, 0, 0, 0.3);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 var(--web-border);
+  z-index: 1000;
+}
+
+/* =========================
+   LEFT
+========================= */
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* BRAND */
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--secondary-color);
+}
+
+/* LOGO IMAGE */
+
+.navbar-logo-image {
+  width: 39px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* LOGO TEXT */
+
+.navbar-logo {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+}
+
+/* =========================
+   CENTER MENU
+========================= */
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 0;
+  margin-left: 82px;
+}
+
+.navbar-menu li {
+  list-style: none;
+}
+
+.navbar-menu a {
+  position: relative;
+  color: var(--secondary-color);
+  font-size: 16px;
+  font-weight: 400;
+  transition: var(--transition);
+}
+
+/* HOVER */
+
+.navbar-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 1px;
+  background: var(--text-light);
+  transition: var(--transition);
+}
+
+.navbar-menu a:hover {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.navbar-menu a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   MENU TOGGLE
+========================= */
+
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.menu-toggle:hover {
+  color: var(--primary-color);
+}
+
+/* =========================
+   MENU TOGGLE
+========================= */
+
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.menu-toggle:hover {
+  color: var(--primary-color);
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  position: fixed;
+
+  top: var(--navbar-height);
+  left: 0;
+
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--navbar-height));
+
+  background: var(--white);
+
+  border-right: 1px solid var(--border-color);
+
+  padding: 40px 30px;
+
+  overflow-y: auto;
+
+  transition: var(--transition);
+
+  z-index: 999;
+}
+
+/* SIDEBAR CLOSED */
+
+.sidebar.closed {
+  transform: translateX(-100%);
+}
+
+/* SIDEBAR TOP */
+
+.sidebar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 40px;
+}
+
+/* CLOSE BUTTON */
+
+.close-sidebar {
+  background: transparent;
+  border: none;
+
+  font-size: 24px;
+
+  cursor: pointer;
+}
+
+/* SIDEBAR MENU */
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+.sidebar-menu li {
+  list-style: none;
+}
+
+.sidebar-menu a {
+  color: var(--text-color);
+
+  transition: var(--transition);
+}
+
+.sidebar-menu a:hover {
+  color: var(--primary-color);
+
+  padding-left: 6px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  padding: 36px 40px;
+  border-top: 1px solid var(--border-color);
+  background: var(--primary-color);
+  font-size: 16px;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+
+/* LINKS */
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--secondary-color);
+}
+
+/* COPYRIGHT */
+
+.footer-copy {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 16px;
+}

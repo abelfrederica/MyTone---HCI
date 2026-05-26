@@ -1,0 +1,93 @@
+{% extends 'layouts/base.html' %} {% block page_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/pages/fashion_season.css') }}"
+/>
+{% endblock %} {% block content %}
+
+<!-- =========================
+     FASHION SEASON SECTION
+========================= -->
+
+<section class="fashion-season-section">
+  <!-- HEADER -->
+
+  <div class="fashion-season-header">
+    <h1>Select your season</h1>
+
+    <p>
+      Scientific clarity starts with understanding your color. Choose the option
+      that best represents your personal color.
+    </p>
+  </div>
+
+  <!-- GRID -->
+
+  <div class="season-grid">
+    <!-- SPRING -->
+
+    <a
+      href="{{ url_for('set_fashion_season', season='spring') }}"
+      class="season-card"
+    >
+      <div class="season-image">
+        <img
+          src="{{ url_for('static', filename='images/fashion-spring.png') }}"
+          alt="Spring"
+        />
+      </div>
+
+      <span> SPRING </span>
+    </a>
+
+    <!-- SUMMER -->
+
+    <a
+      href="{{ url_for('set_fashion_season', season='summer') }}"
+      class="season-card"
+    >
+      <div class="season-image">
+        <img
+          src="{{ url_for('static', filename='images/fashion-summer.png') }}"
+          alt="Summer"
+        />
+      </div>
+
+      <span> SUMMER </span>
+    </a>
+
+    <!-- AUTUMN -->
+
+    <a
+      href="{{ url_for('set_fashion_season', season='autumn') }}"
+      class="season-card"
+    >
+      <div class="season-image">
+        <img
+          src="{{ url_for('static', filename='images/fashion-autumn.png') }}"
+          alt="Autumn"
+        />
+      </div>
+
+      <span> AUTUMN </span>
+    </a>
+
+    <!-- WINTER -->
+
+    <a
+      href="{{ url_for('set_fashion_season', season='winter') }}"
+      class="season-card"
+    >
+      <div class="season-image">
+        <img
+          src="{{ url_for('static', filename='images/fashion-winter.png') }}"
+          alt="Winter"
+        />
+      </div>
+
+      <span> WINTER </span>
+    </a>
+  </div>
+</section>
+
+{% endblock %}

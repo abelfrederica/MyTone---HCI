@@ -1,0 +1,153 @@
+{% extends 'layouts/base.html' %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/season-detail.css') }}">
+{% endblock %}
+
+{% block content %}
+  <!-- Hero Section -->
+  <section class="seasonal-profile">
+    <div class="seasonal-text">
+      <span class="seasonal-label">
+            Seasonal Profile
+      </span>
+      <h1>The Autumn Palette</h1>
+      <p>
+        Autumn is the season of depth and resonance. It captures the essence of a sun‑drenched forest floor, 
+        defined by golden undertones and a rich, muted saturation that exudes grounded luxury and warmth.
+      </p>
+    </div>
+    <img src="/static/images/autumn.png" alt="Autumn Palette Portrait">
+  </section>
+
+  <!-- Undertone, Key Value, Key Metals -->
+  <section class="seasons-keys">
+    <div class="key-card">
+      <h3>THE UNDERTONE</h3>
+      <p><strong>Warm Earthy</strong>
+        Autumn skin radiates with golden‑yellow or red undertones. 
+        The complexion has a characteristic warmth that is enhanced by rich, organic colors.
+      </p>
+    </div>
+
+    <div class="key-card">
+      <h3>KEY VALUE</h3>
+      <p><strong>Rich & Muted</strong>
+        Colors are distinguished by their addition of black or gray to warm hues, 
+        creating a lower value that mimics the natural richness of the harvest season.
+      </p>
+    </div>
+
+    <div class="key-card">
+      <h3>KEY METALS</h3>
+      <div class="key-swatches">
+        <div class="swatch-item">
+          <span class="swatch-circle copper"></span>
+          <div class="swatch-label"><b>Copper</b></div>
+        </div>
+        <div class="swatch-item">
+          <span class="swatch-circle bronze"></span>
+          <div class="swatch-label"><b>Bronze</b></div>
+        </div>
+      </div>
+      <p>
+        Antiqued and hammered finishes in warm metallics like brass and copper 
+        harmonize perfectly with the season’s deep tones.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sub-Season Spectrum -->
+  <div class="section-header">
+    <h2>The Sub-Season Spectrum</h2>
+  </div>
+  <section class="sub-seasons">
+    <div class="sub-season">
+      <h4>01 / EARLY HARVEST</h4>
+      <h3>Soft Autumn</h3>
+      <p>
+        The bridge between Summer and Autumn. Muted, gentle, and hazy. 
+        Think of olive greens, toasted almonds, and sand.
+      </p>
+      <div class="swatches">
+        <span class="swatch olive"></span>
+        <span class="swatch sand"></span>
+        <span class="swatch beige"></span>
+      </div>
+      <img src="/static/images/autumn_soft.png" alt="Autumn Palette Portrait">
+    </div>
+
+    <div class="sub-season">
+      <img src="/static/images/autumn_warm.png" alt="Autumn Palette Portrait">
+      <h4>02 / PEAK SEASON</h4>
+      <h3>Warm Autumn</h3>
+      <p>
+        The true heart of the season. Vibrant but grounded. 
+        Golden browns, pumpkin spice, and mustard yellows.
+      </p>
+      <div class="swatches">
+        <span class="swatch brown"></span>
+        <span class="swatch rust"></span>
+        <span class="swatch mustard"></span>
+      </div>
+    </div>
+
+    <div class="sub-season">
+      <h4>03 / LATE HARVEST</h4>
+      <h3>Deep Autumn</h3>
+      <p>
+        The transition into Winter. High contrast and heavy value. 
+        Deep forest greens and rich burgundies.  
+        <h4>Saturation Level: Rich</h4>
+      </p>
+      <div class="swatches">
+        <span class="swatch forest"></span>
+        <span class="swatch mahogany"></span>
+        <span class="swatch burgundy"></span>
+      </div>
+      <img src="/static/images/autumn_deep.png" alt="Autumn Palette Portrait">
+    </div>
+  </section>
+
+  <!-- Autumn Neutrals -->
+  <section class="autumn-neutrals">
+    <div class="neutral-header">
+      <div class="neutral-text">
+        <h2>Autumn Neutrals</h2>
+        <p>
+          Essential foundation tones for a grounded Autumn wardrobe. 
+          Favor warm beiges, rich chocolates, and earthy greens.
+        </p>
+      </div>
+      <div class="neutral-button">
+        <a href="{{ url_for('seasons') }}" class="btn-primary">Explore Others</a>
+      </div>
+
+    </div>
+
+    <div class="swatches2">
+      <div class="swatch-item"><span class="swatch2 oatmeal"></span><div class="swatch-label">OATMEAL</div></div>
+      <div class="swatch-item"><span class="swatch2 sand"></span><div class="swatch-label">SAND</div></div>
+      <div class="swatch-item"><span class="swatch2 espresso"></span><div class="swatch-label">ESPRESSO</div></div>
+      <div class="swatch-item"><span class="swatch2 deepteal"></span><div class="swatch-label">DEEP TEAL</div></div>
+      <div class="swatch-item"><span class="swatch2 forest"></span><div class="swatch-label">FOREST</div></div>
+      <div class="swatch-item"><span class="swatch2 mahogany"></span><div class="swatch-label">MAHOGANY</div></div>
+    </div>
+  </section>
+
+  <!-- Banner -->
+  <section class="banner">
+    <div class="banner-images">
+      <img src="/static/images/autumn_banner.png" alt="Autumn Aesthetic Banner" class="base-img">
+      <img src="/static/images/bannerG.png" alt="Overlay Banner" class="overlay-img">
+    </div>
+    <div class="banner-text">
+      <h2>Curating the Autumn Aesthetic</h2>
+      <p>A Masterclass in Rich Resonance.</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+
+  
+{% endblock %}

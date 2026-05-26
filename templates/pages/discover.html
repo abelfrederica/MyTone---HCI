@@ -1,0 +1,309 @@
+{% extends 'layouts/base.html' %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/discover.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="opening-section">
+    <!-- LEFT -->
+    <div class="opening-left">
+        <span class="opening-label">
+            SCIENTIFIC PRECISION
+        </span>
+
+        <h1>
+            Discover the Power of Your True Colors
+        </h1>
+
+        <p>
+            Unlock a personalized palette tailored to your unique biology.
+            Nama combines advanced color science with aesthetic mastery
+            to illuminate your natural brilliance.
+        </p>
+
+        <div class="opening-buttons">
+            <a href="{{ url_for('analysis') }}">
+                <button class="btn-primary">
+                    START ANALYSIS
+                </button>
+            </a>
+            <a href="{{ url_for('seasons') }}">
+                <button class="btn-secondary">
+                    EXPLORE SEASONS
+                </button>
+            </a>
+        </div>
+    </div>
+    <!-- RIGHT -->
+    <div class="opening-right">
+        <img src="{{ url_for('static', filename='images/discover-1.png') }}"
+             alt="Opening Image">
+    </div>
+</section>
+
+<section class="analysis-section">
+
+    <!-- TITLE -->
+
+    <div class="section-title">
+
+        <h2>
+            What is Color Analysis?
+        </h2>
+
+        <div class="title-line"></div>
+
+    </div>
+
+    <!-- TOP GRID -->
+
+    <div class="analysis-top">
+
+        <!-- LEFT CARD -->
+
+        <div class="analysis-card">
+
+            <h3>
+                Biological Harmony
+            </h3>
+
+            <p>
+                Color analysis is the systematic process of determining
+                which colors best complement a person's natural coloring—
+                specifically their skin undertones, eye color, and hair color.
+                It is the bridge between physics and personal identity.
+            </p>
+
+            <span>
+                SCIENTIFIC METHOD
+            </span>
+
+        </div>
+
+        <!-- IMAGE -->
+
+        <div class="analysis-image">
+
+            <img src="{{ url_for('static', filename='images/discover-2.png') }}"
+                 alt="Analysis">
+
+        </div>
+
+    </div>
+
+    <!-- BOTTOM CARDS -->
+
+    <div class="analysis-features">
+
+        <!-- FEATURE 1 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ✦
+            </div>
+
+            <h4>
+                Radiance
+            </h4>
+
+            <p>
+                The right colors act as a natural filter,
+                reducing the appearance of imperfections
+                and highlighting your features.
+            </p>
+
+        </div>
+
+        <!-- FEATURE 2 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ✧
+            </div>
+
+            <h4>
+                Structure
+            </h4>
+
+            <p>
+                Create a cohesive wardrobe architecture
+                where every piece works in perfect union
+                with your profile.
+            </p>
+
+        </div>
+
+        <!-- FEATURE 3 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ❂
+            </div>
+
+            <h4>
+                Clarity
+            </h4>
+
+            <p>
+                Move beyond trends and embrace a timeless
+                color strategy rooted in your unique DNA.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STEPS SECTION
+========================= -->
+
+<section class="steps-section">
+
+    <!-- LEFT -->
+
+    <div class="steps-left">
+
+        <h2>
+            How it Works
+        </h2>
+
+        <p>
+            Our three-step scientific analysis protocol ensures
+            absolute accuracy in your results.
+        </p>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="steps-right">
+
+        <!-- ITEM 1 -->
+
+        <div class="step-item">
+
+            <span class="step-number">
+                01
+            </span>
+
+            <div class="step-content">
+
+                <h3>
+                    Capture Under Studio Conditions
+                </h3>
+
+                <p>
+                    Our guided photography tool ensures your image
+                    is captured with the correct white balance and
+                    exposure to prevent environmental color contamination.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- ITEM 2 -->
+
+        <div class="step-item">
+
+            <span class="step-number">
+                02
+            </span>
+
+            <div class="step-content">
+
+                <h3>
+                    Spectral Undertone Mapping
+                </h3>
+
+                <p>
+                    We analyze the hemoglobin, melanin,
+                    and carotene levels reflected in your skin
+                    to map your precise temperature and chroma coordinates.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- ITEM 3 -->
+
+        <div class="step-item">
+
+            <span class="step-number">
+                03
+            </span>
+
+            <div class="step-content">
+
+                <h3>
+                    Seasonal Archetype Assignment
+                </h3>
+
+                <p>
+                    Your data is matched against the 12-season color model
+                    to provide you with a comprehensive digital wardrobe
+                    and makeup guide.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     TRANSFORMATION SECTION
+========================= -->
+
+<section class="transformation-section">
+
+    <!-- LEFT -->
+
+    <div class="transform-left">
+
+        <h2>
+            Experience the Transformation
+        </h2>
+
+        <p>
+            Ready to see yourself in a new light?
+            Our analysis provides more than just a palette;
+            it provides a roadmap to your most confident self.
+        </p>
+
+        <!-- COLORS -->
+
+        <div class="palette-colors">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="transform-right">
+
+        <img src="{{ url_for('static', filename='images/discover-3.png') }}"
+             alt="Transformation">
+
+    </div>
+
+</section>
+
+{% endblock %}

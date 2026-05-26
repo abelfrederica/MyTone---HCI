@@ -1,0 +1,66 @@
+{% extends 'layouts/base.html' %} {% block page_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/pages/result.css') }}"
+/>
+{% endblock %} {% block content %}
+
+<section class="result-section">
+  <!-- HERO -->
+
+  <div class="result-hero">
+    <div class="result-left">
+      <span class="result-label"> SCIENTIFIC RESULT </span>
+
+      <h1>{{ result.season_name }}</h1>
+
+      <p>{{ result.description }}</p>
+    </div>
+
+    <div class="result-right">
+      <img
+        src="{{ url_for('static', filename=result.hero_image) }}"
+        alt="{{ result.season_name }}"
+      />
+    </div>
+  </div>
+
+  <!-- PALETTE -->
+
+  <div class="palette-card">
+    <div class="palette-top">
+      <span> THE CORE PALETTE </span>
+
+      <span> {{ result.total_colors }} REFINED TONES </span>
+    </div>
+
+    <div class="palette-grid">
+      {% for color in result.palette %}
+      <div class="palette-color" style="background: {{ color }};"></div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- COMPLETE -->
+
+  <div class="result-complete">
+    <h2>Analysis Complete</h2>
+
+    <p>
+      We've mapped your seasonal DNA. Next, we will refine your wardrobe
+      recommendations based on your style profile.
+    </p>
+
+    <div class="result-buttons">
+      <a href="{{ url_for('gender', season=season) }}" class="btn-primary">
+        NEXT: SELECT GENDER
+      </a>
+
+      <a href="{{ url_for('analysis') }}" class="btn-secondary">
+        BACK TO ANALYSIS PAGE
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

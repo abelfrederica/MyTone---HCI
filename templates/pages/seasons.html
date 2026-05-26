@@ -1,0 +1,163 @@
+{% extends 'layouts/base.html' %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/seasons.css') }}">
+{% endblock %}
+
+{% block content %}
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2 class="small-title">SCIENTIFIC CLARITY</h2>
+      <h1>Understanding Your Seasonal Palette</h1>
+      <p class="hero-desc">
+        Color analysis is the precise study of how natural lighting interacts
+        with your unique biological pigments. By categorizing harmony into four
+        distinct seasons, we unlock a wardrobe that illuminates your natural features.
+      </p>
+    </div>
+    <div class="hero-image">
+      <img src="/static/images/seasons1.png" alt="Seasonal palette overview illustration">
+    </div>
+  </section>
+
+  <!-- Cards -->
+  <section class="season-grid">
+
+    <!-- SPRING -->
+    <a href="{{ url_for('spring') }}" class="season-link">
+        <div class="season-card spring">
+            <img src="{{ url_for('static', filename='images/seasons_spring.png') }}"
+                 alt="Spring palette illustration">
+
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Spring</h3>
+                    <span>Warm & Bright</span>
+                </div>
+
+                <p>
+                    Defined by golden undertones. Clear, vibrant colors that enhance
+                    natural warmth in the skin and hair.
+                </p>
+
+                <div class="palette">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- SUMMER -->
+    <a href="{{ url_for('summer') }}" class="season-link">
+        <div class="season-card summer">
+            <img src="{{ url_for('static', filename='images/seasons_summer.png') }}"
+                 alt="Summer palette illustration">
+
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Summer</h3>
+                    <span>Cool & Muted</span>
+                </div>
+
+                <p>
+                    Soft, blue-based tones. Gentle, dusty colors that create a serene
+                    and elegant glow.
+                </p>
+
+                <div class="palette">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- AUTUMN -->
+    <a href="{{ url_for('autumn') }}" class="season-link">
+        <div class="season-card autumn">
+            <img src="{{ url_for('static', filename='images/seasons_autumn.png') }}"
+                 alt="Autumn palette illustration">
+
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Autumn</h3>
+                    <span>Warm & Muted</span>
+                </div>
+
+                <p>
+                    Rich and earthy ochres, olives, and terracottas that provide a grounded,
+                    sophisticated frame.
+                </p>
+
+                <div class="palette">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- WINTER -->
+    <a href="{{ url_for('winter') }}" class="season-link">
+        <div class="season-card winter">
+            <img src="{{ url_for('static', filename='images/seasons_winter.png') }}"
+                 alt="Winter palette illustration">
+
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Winter</h3>
+                    <span>Cool & Bright</span>
+                </div>
+
+                <p>
+                    High contrast jewel tones. Stark blacks, icy silvers, and royal purples
+                    for bold expression.
+                </p>
+
+                <div class="palette">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+</section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="cta-text">
+        <span class="small-title">
+            THE FINAL STEP
+        </span>
+        <h3>
+            Ready for Scientific Precision?
+        </h3>
+        <p>
+            While these descriptions provide a foundation, the true magic lies
+            in your personal data. Our algorithm analyzes skin reflectance,
+            eye depth, and hair undertones to find your specific sub-season
+            with clinical accuracy.
+        </p>
+        <a href="{{ url_for('analysis') }}" class="btn-primary">
+            Start Analysis
+        </a>
+
+    </div>
+    <div class="cta-image">
+        <img src="{{ url_for('static', filename='images/seasons2.png') }}"
+             alt="Analysis banner illustration">
+    </div>
+</section>
+
+{% endblock %}

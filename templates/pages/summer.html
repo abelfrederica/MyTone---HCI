@@ -1,0 +1,177 @@
+{% extends 'layouts/base.html' %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/season-detail.css') }}">
+{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="seasonal-profile">
+        <div class="seasonal-text">
+            <span class="seasonal-label">
+            Seasonal Profile
+            </span>
+            <h1>The Summer Palette</h1>
+            <p>
+                Embodying the gentle transitions of hazy afternoon sunlight, the Summer palette is defined by cool blue‑based undertones and a soft, muted clarity. Unlike the sharp contrast of Winter, Summer colors are sophisticated, washed‑out, and elegantly understated.
+            </p>
+        </div>
+        <img src="/static/images/summer.png" alt="Summer Palette Portrait">
+    </section>
+
+    <!-- Undertone, Key Value, Key Metals -->
+    <section class="seasons-keys">
+        <div class="key-card">
+            <h3>THE UNDERTONE</h3>
+            <p><strong>Blue-Based Cool</strong>
+            Summer skin has a distinctly cool, pinkish, or blue undertone. 
+            There is a delicate quality to the complexion that thrives in refined, non‑vibrant hues.
+            </p>
+        </div>
+
+        <div class="key-card">
+            <h3>KEY VALUE</h3>
+            <p><strong>Soft & Muted</strong>
+            Colours are never neon or primary; they are always “grayed down.” 
+            Think of colors viewed through a fine silk veil or a gentle summer mist.
+            </p>
+        </div>
+
+        <div class="key-card">
+            <h3>KEY METALS</h3>
+            <div class="key-swatches">
+                <div class="swatch-item">
+                    <span class="swatch-circle silver"></span>
+                    <div class="swatch-label"><b>Silver</b></div>
+                </div>
+                <div class="swatch-item">
+                    <span class="swatch-circle whitegold"></span>
+                    <div class="swatch-label"><b>White Gold</b></div>
+                </div>
+            </div>
+            <p>
+            Brushed finishes and matte textures in cool metals complement the muted Summer essence 
+            better than high‑shine yellow gold.
+            </p>
+        </div>
+    </section>
+
+    <!-- Sub-Season Spectrum -->
+    <div class="section-header">
+         <h2>The Sub-Season Spectrum</h2>
+    </div>
+    <section class="sub-seasons">
+        <div class="sub-season">
+            <h4>01 / EARLY MORNING</h4>
+            <h3>Light Summer</h3>
+            <p>
+                The brightest of the Summers. High in lightness, bordering on Spring but maintaining a strictly cool core. 
+                Think iced lemonade and sky blue.
+            </p>
+            <div class="swatches">
+                <span class="swatch paleblue"></span>
+                <span class="swatch lavender"></span>
+                <span class="swatch pink"></span>
+                <span class="swatch peach"></span>
+            </div>
+            <img src="/static/images/summer_light.png" alt="Summer Palette Portrait">
+        </div>
+
+        <div class="sub-season">
+            <img src="/static/images/summer_true.png" alt="Summer Palette Portrait">
+            <h4>02 / HIGH NOON</h4>
+            <h3>True Summer</h3>
+            <p>
+                The heart of the season. Pure cool undertones with medium saturation. 
+                Defined by raspberry, spruce, and classic chambray.
+            </p>
+            <div class="swatches">
+                <span class="swatch raspberry"></span>
+                <span class="swatch spruce"></span>
+                <span class="swatch chambray"></span>
+            </div>
+        </div>
+
+        <div class="sub-season">
+            <h4>03 / TWILIGHT</h4>
+            <h3>Soft Summer</h3>
+            <p>
+                The bridge to Autumn. The most muted Summer palette. Earthier, featuring charcoal, sage green, and soft burgundy.  
+                <h4>Mutedness Level: High</h4>
+            </p>
+            <div class="swatches">
+                <span class="swatch navy"></span>
+                <span class="swatch gray"></span>
+                <span class="swatch mauve"></span>
+                <span class="swatch beige"></span>
+                <span class="swatch darkblue"></span>
+            </div>
+            <img src="/static/images/summer_soft.png" alt="Summer Palette Portrait">
+        </div>
+    </section>
+
+    <!-- Summer Neutrals -->
+    <section class="summer-neutrals">
+        <div class="neutral-header">
+            <div class="neutral-text">
+                <h2>Summer Neutrals</h2>
+                <p>
+                    Essential base tones for a refined Summer wardrobe.<br>
+                    Avoid black and stark white, opt for charcoal and soft bone.
+                </p>
+            </div>
+            <div class="neutral-button">
+                <a href="{{ url_for('seasons') }}" class="btn-primary">Explore Others</a>
+            </div>
+        </div>
+
+        <div class="swatches2">
+            <div class="swatch-item">
+                <span class="swatch2 coolgray"></span>
+                <div class="swatch-label">COOLGRAY</div>
+            </div>
+            
+            <div class="swatch-item">
+                 <span class="swatch2 softbone"></span>
+                  <div class="swatch-label">SOFTBONE</div>
+                </div>
+
+            <div class="swatch-item">
+                <span class="swatch2 deepnavy"></span>
+                <div class="swatch-label">DEEPNAVY</div>
+            </div>
+
+            <div class="swatch-item">
+                <span class="swatch2 pebble"></span>
+                <div class="swatch-label">PEBBLE</div>
+            </div>
+
+            <div class="swatch-item">
+                <span class="swatch2 slate"></span>
+                <div class="swatch-label">SLATE</div>
+            </div>
+
+            <div class="swatch-item">
+                <span class="swatch2 pearlgray"></span>
+                <div class="swatch-label">PEARLGRAY</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Banner -->
+    <section class="banner">
+        <div class="banner-images">
+            <img src="/static/images/summer_banner.png" alt="Summer Aesthetic Banner" class="base-img">
+            <img src="/static/images/bannerG.png" alt="Overlay Banner" class="overlay-img">
+        </div>
+        
+        <div class="banner-text">
+            <h2>Refining the Summer Aesthetic</h2>
+            <p>A Masterclass in Muted Elegance.</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+{% endblock %}

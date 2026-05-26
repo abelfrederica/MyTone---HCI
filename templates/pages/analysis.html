@@ -1,0 +1,170 @@
+{% extends 'layouts/base.html' %} {% block page_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/pages/analysis.css') }}"
+/>
+{% endblock %} {% block content %}
+
+<!-- =========================
+     ANALYSIS SECTION
+========================= -->
+
+<section class="analysis-section">
+  <!-- HEADER -->
+
+  <div class="analysis-header">
+    <h1>Chromatic Precision Analysis</h1>
+
+    <p>
+      Upload a high-fidelity portrait to begin your scientific color analysis
+      journey. Our system achieves
+      <strong>99.8% accuracy</strong>
+      under optimal lighting and calibration conditions.
+    </p>
+  </div>
+
+  <!-- CONTENT -->
+
+  <div class="analysis-content">
+    <!-- =========================
+             GUIDELINES
+        ========================= -->
+
+    <div class="guidelines-card">
+      <h3>Photo Guidelines</h3>
+
+      <ul class="guidelines-list">
+        <!-- ITEM 1 -->
+
+        <li>
+          <div class="guidelines-icon">☼</div>
+
+          <div>
+            <strong> Natural Light </strong>
+
+            <p>
+              Face a window during daylight. Avoid harsh shadows or artificial
+              yellow lighting.
+            </p>
+          </div>
+        </li>
+
+        <!-- ITEM 2 -->
+
+        <li>
+          <div class="guidelines-icon">⊘</div>
+
+          <div>
+            <strong> No Makeup </strong>
+
+            <p>
+              A clean face allows for accurate detection of natural skin
+              undertones and surface tones.
+            </p>
+          </div>
+        </li>
+
+        <!-- ITEM 3 -->
+
+        <li>
+          <div class="guidelines-icon">⌾</div>
+
+          <div>
+            <strong> Centered Portrait </strong>
+
+            <p>
+              Look directly at the camera at eye level. Ensure your neck and
+              shoulders are visible.
+            </p>
+          </div>
+        </li>
+      </ul>
+
+      <!-- IMAGE -->
+
+      <div class="guidelines-image">
+        <img
+          src="{{ url_for('static', filename='images/analysis1.png') }}"
+          alt="Photo Example"
+        />
+      </div>
+    </div>
+
+    <!-- =========================
+             UPLOAD CARD
+        ========================= -->
+
+    <div class="upload-card">
+      <!-- FORM -->
+
+      <form
+        action="{{ url_for('analyze_image') }}"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <!-- ICON -->
+
+        <div class="upload-icon">✿</div>
+
+        <!-- TITLE -->
+
+        <p class="upload-title">Drop your portrait here</p>
+
+        <!-- DESCRIPTION -->
+
+        <p class="upload-description">
+          Drag and drop or browse to select a JPEG or PNG image file.
+        </p>
+
+        <!-- HIDDEN INPUT -->
+
+        <input
+          type="file"
+          name="image"
+          id="image-input"
+          accept="image/*"
+          capture="environment"
+          hidden
+        />
+
+        <!-- PREVIEW -->
+
+        <img id="preview-image" class="preview-image" alt="Preview" />
+
+        <!-- BUTTON -->
+
+        <button type="button" class="btn-primary" id="select-button">
+          SELECT FILE
+        </button>
+        <!-- ANALYZE BUTTON -->
+
+        <button
+          type="submit"
+          class="btn-primary analyze-btn"
+          id="analyze-button"
+          style="display: none"
+        >
+          ANALYZE NOW
+        </button>
+
+        <!-- LOADING BAR -->
+
+        <div class="loading-wrapper">
+          <div class="loading-bar"></div>
+        </div>
+        
+        <!-- STATUS -->
+
+        <span class="upload-status"> CALIBRATION ENGINE READY </span>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     SCRIPT
+========================= -->
+
+<script src="{{ url_for('static', filename='js/analysis.js') }}"></script>
+
+{% endblock %}

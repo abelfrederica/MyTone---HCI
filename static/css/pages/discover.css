@@ -1,0 +1,377 @@
+/* =========================
+   OPENING / HERO SECTION
+========================= */
+
+.opening-section {
+  min-height: calc(100vh - var(--navbar-height));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+  margin: var(--section-border) var(--web-border);
+  padding: 40px;
+}
+
+/* LEFT */
+.opening-left {
+  max-width: 100%;
+}
+
+/* LABEL */
+.opening-label {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+/* TITLE */
+.opening-left h1 {
+  font-size: 40px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+/* DESCRIPTION */
+.opening-left p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 40px;
+}
+
+/* BUTTONS */
+.opening-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+/* IMAGE */
+.opening-right img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+/* =========================
+   ANALYSIS SECTION
+========================= */
+
+.analysis-section {
+  margin: var(--section-border) var(--web-border);
+  padding: 40px;
+}
+
+/* TITLE */
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+.title-line {
+  width: 60px;
+  height: 2px;
+  background: var(--secondary-color);
+  margin: auto;
+}
+
+/* =========================
+   TOP GRID
+========================= */
+
+.analysis-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+  align-items: stretch;
+}
+
+/* =========================
+   ANALYSIS CARD
+========================= */
+
+.analysis-card {
+  background: var(--primary-color);
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* TITLE */
+
+.analysis-card h3 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  font-weight: 400;
+  color: var(--secondary-color);
+}
+
+.analysis-card p {
+  line-height: 1.7;
+  font-size: 16px;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+/* LABEL */
+
+.analysis-card span {
+  margin-top: auto;
+  font-size: 12px;
+  letter-spacing: 1.9px;
+  color: var(--text-light);
+}
+
+/* =========================
+   ANALYSIS IMAGE
+========================= */
+
+.analysis-image {
+  height: 100%;
+}
+
+.analysis-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================
+   FEATURE GRID
+========================= */
+
+.analysis-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+/* =========================
+   FEATURE CARD
+========================= */
+
+.feature-card {
+  background: var(--primary-color);
+  padding: 40px;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ICON */
+
+.feature-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: var(--secondary-color);
+}
+
+/* TITLE */
+
+.feature-card h4 {
+  font-size: 12px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  color: var(--secondary-color);
+}
+
+/* TEXT */
+
+.feature-card p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+/* =========================
+   STEPS SECTION
+========================= */
+
+.steps-section {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 60px;
+  padding: 40px;
+  background: var(--primary-color);
+  margin: var(--section-border) var(--web-border);
+}
+
+/* =========================
+   LEFT
+========================= */
+
+.steps-left {
+  padding-top: 8px;
+}
+
+.steps-left h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.steps-left p {
+  line-height: 1.8;
+  font-size: 16px;
+  color: var(--secondary-color);
+  max-width: 360px;
+}
+
+/* =========================
+   RIGHT
+========================= */
+
+.steps-right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   STEP ITEM
+========================= */
+
+.step-item {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 30px;
+  padding: 34px 0;
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.199);
+}
+
+.step-item:first-child {
+  padding-top: 0;
+}
+
+.step-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* =========================
+   STEP NUMBER
+========================= */
+
+.step-number {
+  font-size: 18px;
+  color: var(--secondary-color);
+  letter-spacing: 2px;
+  padding-top: 4px;
+}
+
+/* =========================
+   STEP CONTENT
+========================= */
+
+.step-content h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--secondary-color);
+}
+
+.step-content p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--secondary-color);
+  max-width: 640px;
+}
+
+/* =========================
+   TRANSFORMATION SECTION
+========================= */
+
+.transformation-section {
+  margin: var(--section-border) var(--web-border);
+  padding: 40px;
+  background: var(--secondary-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+/* LEFT */
+.transform-left {
+  color: var(--white);
+}
+
+.transform-left h2 {
+  font-size: 40px;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.transform-left p {
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 40px;
+  max-width: 720px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* PALETTE */
+.palette-colors {
+  display: flex;
+  gap: 16px;
+}
+
+.palette-colors span {
+  width: 64px;
+  height: 64px;
+  border-radius: 2px;
+}
+
+/* COLORS */
+.palette-colors span:nth-child(1) {
+  background: #f5f5f0;
+  border: 1px solid #faf9f64d;
+}
+
+.palette-colors span:nth-child(2) {
+  background: #e8e4e1;
+  border: 1px solid #faf9f64d;
+}
+
+.palette-colors span:nth-child(3) {
+  background: #d7d2cd;
+  border: 1px solid #faf9f64d;
+}
+
+.palette-colors span:nth-child(4) {
+  background: #b5aca3;
+  border: 1px solid #faf9f64d;
+}
+
+.palette-colors span:nth-child(5) {
+  background: #8c837a;
+  border: 1px solid #faf9f64d;
+}
+
+/* RIGHT IMAGE */
+.transform-right img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}

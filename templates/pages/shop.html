@@ -1,0 +1,106 @@
+{% extends 'layouts/base.html' %} {% block page_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/pages/shop.css') }}"
+/>
+{% endblock %} {% block content %}
+
+<section class="shop-hero-section">
+  <div class="shop-hero-container">
+    <!-- SLIDES -->
+
+    {% for item in shop_data %}
+
+    <div
+      class="shop-slide {% if loop.first %}active{% endif %}"
+      data-index="{{ loop.index0 }}"
+    >
+      <img
+        src="{{ url_for('static', filename=item.image) }}"
+        alt="{{ item.season }}"
+      />
+
+      <div class="shop-hero-dark"></div>
+
+      <div class="shop-hero-content">
+        <span class="shop-label"> {{ item.label }} </span>
+
+        <h1>{{ item.title }}</h1>
+
+        <p>{{ item.description }}</p>
+
+      </div>
+    </div>
+
+    {% endfor %}
+
+    <!-- BUTTONS -->
+
+    <button class="carousel-btn prev-btn">&#10094;</button>
+
+    <button class="carousel-btn next-btn">&#10095;</button>
+  </div>
+</section>
+
+<!-- =========================
+     SHOP SECTION
+========================= -->
+
+<section class="shop-section">
+  <div class="shop-header">
+    <div class="shop-header-left">
+      <span class="shop-subtitle"> PERSONALIZED CURATIONS </span>
+
+      <h2 id="shop-section-title">{{ shop_data[0].section_title }}</h2>
+
+      <p id="shop-section-description">
+        {{ shop_data[0].section_description }}
+      </p>
+    </div>
+
+    <button class="shop-score expand-products-btn">
+      <span>EXPLORE MORE</span>
+      <div class="score-line"></div>
+    </button>
+  </div>
+
+  <!-- PRODUCTS -->
+
+  <div class="product-grid" id="product-grid">
+    {% for product in shop_data[0].products %}
+
+    <div class="product-card">
+      <div class="product-image">
+        <span class="product-tag"> SHOPEE </span>
+
+        <img
+          src="{{ url_for('static', filename=product.image) }}"
+          alt="{{ product.name }}"
+        />
+      </div>
+
+      <div class="product-info">
+        <div class="product-top">
+          <h3>{{ product.name }}</h3>
+
+          <span class="product-price"> {{ product.price }} </span>
+        </div>
+
+        <span class="product-color"> COLOR: {{ product.color }} </span>
+
+        <button class="product-button">BUY ON SHOPEE</button>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+
+  const shopData = {{ shop_data | tojson }};
+</script>
+
+<script src="{{ url_for('static', filename='js/shop.js') }}"></script>
+
+{% endblock %}

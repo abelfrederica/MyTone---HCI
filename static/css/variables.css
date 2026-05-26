@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Changa+One:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  /*COLORS*/
+  --primary-color: #EFEEEB; /*light boxes*/
+  --secondary-color: #645C55; /*buttons, small text, dark boxes*/
+  --background-color: #FAF9F6; /*background*/
+  --text-color: #1A1C1A; /*big text*/
+  --text-light: #7E756F; /*decorative text*/
+  --white: #ffffff;
+  --border-color: #D0C4BC;
+
+  /* TYPOGRAPHY */
+  --font-family: 'Manrope', sans-serif;
+  --heading-1: 60px;
+  --heading-2: 42px;
+  --heading-3: 24px;
+  --body-text: 16px;
+
+  /* SPACING */
+  --web-border: 15px;
+  --section-border: 32px;
+  --section-padding: 80px;
+  --container-padding: 60px;
+
+  /* SIDEBAR */
+  --sidebar-width: 250px;
+  --navbar-height: 56px;
+
+  /* BORDER */
+  --radius: 12px;
+
+  /* TRANSITION */
+  --transition: 0.3s ease;
+}

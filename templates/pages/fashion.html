@@ -1,0 +1,144 @@
+{% extends 'layouts/base.html' %} {% block page_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/pages/fashion.css') }}"
+/>
+{% endblock %} {% block content %}
+
+<section class="fashion-section">
+  <!-- HERO -->
+
+  <div class="fashion-hero">
+    <div class="fashion-hero-left">
+      <span class="fashion-label"> SEASONAL PROFILE </span>
+
+      <h1>{{ data.title }}</h1>
+
+      <p>{{ data.description }}</p>
+    </div>
+
+    <div class="fashion-hero-right">
+      <div class="fashion-palette">
+        {% for color in data.palette %}
+        <span style="background: {{ color }};"></span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- BEST COLORS -->
+
+  <div class="fashion-block">
+    <div class="best-grid">
+      <!-- LEFT -->
+
+      <div class="best-main-card">
+        <img
+          src="{{ url_for('static', filename=data.hero_image) }}"
+          alt="Summer Outfit"
+        />
+
+        <div class="best-overlay">
+          <span> PRIMARY FOUNDATION </span>
+
+          <h3>{{ data.best_colors_title }}</h3>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+
+      <!-- BEST COLORS RIGHT SIDE -->
+      <div class="best-side-column">
+        <!-- SCIENTIFIC NOTE (with background image) -->
+        <div class="scientific-note">
+          <span> SCIENTIFIC NOTE </span>
+
+          <p>{{ data.note }}</p>
+        </div>
+
+        <!-- BUTTON CARD (with background image) -->
+        <div
+          class="neutral-card"
+          style="background-image: linear-gradient(rgba(0,0,0,0.02), rgba(0,0,0,0.02)), url('{{ url_for('static', filename=data.button_image) }}');"
+        >
+          <button>{{ data.button }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FABRIC SCIENCE -->
+
+  <div class="fabric-layout">
+    <!-- LEFT -->
+
+    <div class="fabric-left">
+      <h2>Fabric Science</h2>
+
+      <p>{{ data.fabric.desc }}</p>
+
+      <div class="fabric-grid">
+        <!-- SILK -->
+        <div class="fabric-card">
+          <img
+            src="{{ url_for('static', filename=data.fabric.silk.image) }}"
+            alt="{{ data.fabric.silk.title }}"
+          />
+
+          <div class="fabric-content">
+            <span>{{ data.fabric.silk.title }}</span>
+
+            <p>{{ data.fabric.silk.desc }}</p>
+          </div>
+        </div>
+
+        <!-- LINEN -->
+        <div class="fabric-card">
+          <img
+            src="{{ url_for('static', filename=data.fabric.linen.image) }}"
+            alt="{{ data.fabric.linen.title }}"
+          />
+
+          <div class="fabric-content">
+            <span>{{ data.fabric.linen.title }}</span>
+
+            <p>{{ data.fabric.linen.desc }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="style-tip">
+        <h3>Style Tip</h3>
+
+        <p>"{{ data.style_tip }}"</p>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="fabric-right">
+      <div class="portrait-image">
+        <img
+          src="{{ url_for('static', filename=data.portrait) }}"
+          alt="Summer Portrait"
+        />
+      </div>
+
+      <div class="beauty-grid">
+        <div class="beauty-card">
+          <span> {{ data.beauty["1"] }} </span>
+
+          <p>{{ data.beauty.jewelry }}</p>
+        </div>
+
+        <div class="beauty-card">
+          <span> {{ data.beauty["2"] }} </span>
+
+          <p>{{ data.beauty.makeup }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
+</section>

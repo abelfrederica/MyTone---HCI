@@ -1,0 +1,48 @@
+{% extends 'layouts/base.html' %} {% block page_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/pages/legal.css') }}"
+/>
+{% endblock %} {% block content %}
+
+<section class="legal-page">
+  <div class="legal-container">
+    <span class="legal-label"> TERMS OF SERVICE </span>
+
+    <h1>Platform Usage Terms</h1>
+
+    <p class="legal-intro">
+      By accessing MyTone, users agree to the following terms regarding the use
+      of analysis tools, recommendations, and generated content.
+    </p>
+
+    <div class="legal-block">
+      <h2>Educational Purpose</h2>
+
+      <p>
+        The platform is intended for educational and styling assistance purposes
+        and should not replace professional advice.
+      </p>
+    </div>
+
+    <div class="legal-block">
+      <h2>User Responsibility</h2>
+
+      <p>
+        Users are responsible for ensuring uploaded content complies with
+        applicable laws and regulations.
+      </p>
+    </div>
+
+    <div class="legal-block">
+      <h2>Service Availability</h2>
+
+      <p>
+        Features and recommendations may change over time as the platform
+        evolves and improves.
+      </p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

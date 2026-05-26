@@ -1,0 +1,173 @@
+{% extends 'layouts/base.html' %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/season-detail.css') }}">
+{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="seasonal-profile">
+        <div class="seasonal-text">
+            <span class="seasonal-label">
+                Seasonal Profile
+            </span>
+            <h1>The Spring Palette</h1>
+            <p>
+                Defined by warmth and luminosity, the Spring season represents a rebirth of color. 
+                It is characterized by clear, vibrant hues that carry a distinct golden undertone, 
+                mirroring the awakening of nature after winter.
+            </p>
+        </div>
+        <img src="/static/images/spring.png" alt="Spring Palette Portrait">
+    </section>
+
+    <!-- Undertone, Key Value, Key Metals -->
+    <section class="seasons-keys">
+        <div class="key-card">
+            <h3>THE UNDERTONE</h3>
+            <p><strong>Warm Golden Undertones</strong>
+            The primary driver of the Spring palette is warmth. Every color contains a hint of gold, 
+            creating a glow that harmonizes with skin that has yellow or peachy undertones.
+            </p>
+        </div>
+
+        <div class="key-card">
+            <h3>KEY VALUE</h3>
+            <p><strong>Clear & Vibrant</strong>
+            Unlike Autumn’s muted tones, Spring is high‑chroma. 
+            The colors are crisp, energetic, and free from grayish or muddy influences.
+            </p>
+        </div>
+
+        <div class="key-card">
+            <h3>KEY METALS</h3>
+            <div class="key-swatches">
+                <div class="swatch-item">
+                    <span class="swatch-circle yellow"></span>
+                    <div class="swatch-label"><b>Yellow Gold</b></div>
+                </div>
+                <div class="swatch-item">
+                    <span class="swatch-circle apricot"></span>
+                    <div class="swatch-label"><b>Rose Gold</b></div>
+                </div>
+            </div>
+            <p>
+            Polished or brushed 14k–18k gold elevates the natural warmth of the Spring complexion 
+            better than cool silvers.
+            </p>
+        </div>
+    </section>
+
+    <!-- Sub-Season Spectrum -->
+    <div class="section-header">
+         <h2>The Sub-Season Spectrum</h2>
+    </div>
+    <section class="sub-seasons">
+        <div class="sub-season">
+            <h4>01 / EARLY MORNING</h4>
+            <h3>Clear Spring</h3>
+            <p>
+                The highest contrast subtype. Characterized by sparkling eyes and vibrant skin 
+                that needs intense, saturated colors like bright poppy and turquoise.
+            </p>
+            <div class="swatches">
+                <span class="swatch brightpink"></span>
+                <span class="swatch turquoise"></span>
+                <span class="swatch yellow"></span>
+                <span class="swatch green"></span>
+            </div>
+            <img src="/static/images/spring_clear.png" alt="Spring Palette Portrait">
+        </div>
+
+        <div class="sub-season">
+            <img src="/static/images/spring_warm.png" alt="Spring Palette Portrait">
+            <h4>02 / HIGH NOON</h4>
+            <h3>Warm Spring</h3>
+            <p>
+                The true heart of Spring. Focuses on medium‑intensity colors with strong golden influences. 
+                Think apricot, honey, and warm greens.
+            </p>
+            <div class="swatches">
+                <span class="swatch apricot"></span>
+                <span class="swatch honey"></span>
+                <span class="swatch warmgreen"></span>
+            </div>
+        </div>
+
+        <div class="sub-season">
+            <h4>03 / TWILIGHT</h4>
+            <h3>Light Spring</h3>
+            <p>
+                The softest of the trio. Transitions toward Summer. 
+                Colors are delicate and airy, like peach fuzz, light aqua, and soft yellow.  
+                <h4>Warmth Level: High</h4>
+            </p>
+            <div class="swatches">
+                <span class="swatch peach"></span>
+                <span class="swatch aqua"></span>
+                <span class="swatch lightyellow"></span>
+                <span class="swatch paleblue"></span>
+            </div>
+            <img src="/static/images/spring_light.png" alt="Spring Palette Portrait">
+        </div>
+    </section>
+
+    <!-- Spring Neutrals -->
+    <section class="spring-neutrals">
+        <div class="neutral-header">
+            <div class="neutral-text">
+                <h2>Spring Neutrals</h2>
+                <p>
+                    Replace black and optic white with these warm alternatives to maintain your natural glow. 
+                    Opt for cream and tan.
+                </p>
+            </div>
+            <div class="neutral-button">
+                <a href="{{ url_for('seasons') }}" class="btn-primary">Explore Others</a>
+            </div>
+        </div>
+
+        <div class="swatches2">
+            <div class="swatch-item">
+                <span class="swatch2 cream"></span>
+                <div class="swatch-label">CREAM</div>
+            </div>
+            <div class="swatch-item">
+                <span class="swatch2 sand"></span>
+                <div class="swatch-label">SAND</div>
+            </div>
+            <div class="swatch-item">
+                <span class="swatch2 tan"></span>
+                <div class="swatch-label">TAN</div>
+            </div>
+            <div class="swatch-item">
+                <span class="swatch2 warmgrey"></span>
+                <div class="swatch-label">WARMGREY</div>
+            </div>
+            <div class="swatch-item">
+                <span class="swatch2 ivory"></span>
+                <div class="swatch-label">IVORY</div>
+            </div>
+            <div class="swatch-item">
+                <span class="swatch2 camel"></span>
+                <div class="swatch-label">CAMEL</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner -->
+    <section class="banner">
+        <div class="banner-images">
+            <img src="/static/images/spring_banner.png" alt="Spring Aesthetic Banner" class="base-img">
+            <img src="/static/images/bannerG.png" alt="Overlay Banner" class="overlay-img">
+        </div>
+        
+        <div class="banner-text">
+            <h2>Cultivating the Spring Glow</h2>
+            <p>A Masterclass in Luminous Vitality.</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+{% endblock%}

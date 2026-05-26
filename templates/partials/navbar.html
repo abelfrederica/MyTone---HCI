@@ -1,0 +1,47 @@
+<nav class="navbar">
+
+    <!-- LEFT -->
+
+    <div class="navbar-left">
+
+        <!-- <button class="menu-toggle">
+            ☰
+        </button> -->
+
+        <a href="/" class="navbar-brand">
+
+            <img
+                src="{{ url_for('static', filename='images/logo.png') }}"
+                alt="MyTone Logo"
+                class="navbar-logo-image"
+            >
+
+            <span class="navbar-logo">
+                MyTone
+            </span>
+
+        </a>
+
+    </div>
+
+    <!-- CENTER -->
+
+    <ul class="navbar-menu">
+        <li><a href="{{ url_for('discover') }}"">Discover</a></li>
+        <li><a href="{{ url_for('seasons') }}"">Seasons</a></li>
+        <li><a href="{{ url_for('analysis') }}"">Analysis</a></li>
+        <li><a href="{{ url_for('fashion') }}"">Fashion</a></li>
+        <li><a href="{{ url_for('shop') }}"">Shop</a></li>
+    </ul>
+
+    <!-- RIGHT -->
+
+    <!-- <div class="navbar-right">
+
+        <a href="#">
+            Login
+        </a>
+
+    </div> -->
+
+</nav>
