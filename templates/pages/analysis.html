@@ -1,8 +1,10 @@
 {% extends 'layouts/base.html' %} {% block page_css %}
+
 <link
   rel="stylesheet"
   href="{{ url_for('static', filename='css/pages/analysis.css') }}"
 />
+
 {% endblock %} {% block content %}
 
 <!-- =========================
@@ -27,8 +29,8 @@
 
   <div class="analysis-content">
     <!-- =========================
-             GUIDELINES
-        ========================= -->
+         GUIDELINES
+    ========================= -->
 
     <div class="guidelines-card">
       <h3>Photo Guidelines</h3>
@@ -40,7 +42,7 @@
           <div class="guidelines-icon">☼</div>
 
           <div>
-            <strong> Natural Light </strong>
+            <strong>Natural Light</strong>
 
             <p>
               Face a window during daylight. Avoid harsh shadows or artificial
@@ -55,7 +57,7 @@
           <div class="guidelines-icon">⊘</div>
 
           <div>
-            <strong> No Makeup </strong>
+            <strong>No Makeup</strong>
 
             <p>
               A clean face allows for accurate detection of natural skin
@@ -70,7 +72,7 @@
           <div class="guidelines-icon">⌾</div>
 
           <div>
-            <strong> Centered Portrait </strong>
+            <strong>Centered Portrait</strong>
 
             <p>
               Look directly at the camera at eye level. Ensure your neck and
@@ -91,8 +93,8 @@
     </div>
 
     <!-- =========================
-             UPLOAD CARD
-        ========================= -->
+         UPLOAD CARD
+    ========================= -->
 
     <div class="upload-card">
       <!-- FORM -->
@@ -116,14 +118,13 @@
           Drag and drop or browse to select a JPEG or PNG image file.
         </p>
 
-        <!-- HIDDEN INPUT -->
+        <!-- FILE INPUT -->
 
         <input
           type="file"
           name="image"
           id="image-input"
           accept="image/*"
-          capture="environment"
           hidden
         />
 
@@ -131,11 +132,39 @@
 
         <img id="preview-image" class="preview-image" alt="Preview" />
 
-        <!-- BUTTON -->
+        <!-- CAMERA -->
 
-        <button type="button" class="btn-primary" id="select-button">
-          SELECT FILE
-        </button>
+        <video id="camera" autoplay playsinline></video>
+
+        <canvas id="camera-canvas"></canvas>
+
+        <!-- BUTTON GROUP -->
+
+        <div class="button-group">
+          <!-- SELECT FILE -->
+
+          <button type="button" class="btn-primary" id="select-button">
+            SELECT FILE
+          </button>
+
+          <!-- OPEN CAMERA -->
+
+          <button type="button" class="btn-primary" id="camera-button">
+            OPEN SELFIE CAMERA
+          </button>
+
+          <!-- CAPTURE -->
+
+          <button
+            type="button"
+            class="btn-primary"
+            id="capture-button"
+            style="display: none"
+          >
+            TAKE SELFIE
+          </button>
+        </div>
+
         <!-- ANALYZE BUTTON -->
 
         <button
@@ -152,7 +181,7 @@
         <div class="loading-wrapper">
           <div class="loading-bar"></div>
         </div>
-        
+
         <!-- STATUS -->
 
         <span class="upload-status"> CALIBRATION ENGINE READY </span>
