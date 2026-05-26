@@ -4,17 +4,39 @@
 
 const uploadCard = document.querySelector(".upload-card");
 
-const selectButton = document.getElementById("select-button");
+const form = document.querySelector(".upload-card form");
+
+/* FILE */
 
 const imageInput = document.getElementById("image-input");
 
+const selectButton = document.getElementById("select-button");
+
+/* PREVIEW */
+
 const previewImage = document.getElementById("preview-image");
+
+/* ANALYZE */
 
 const analyzeButton = document.getElementById("analyze-button");
 
+/* LOADING */
+
 const loadingBar = document.querySelector(".loading-bar");
 
-const form = document.querySelector(".upload-card form");
+/* CAMERA */
+
+const cameraButton = document.getElementById("camera-button");
+
+const captureButton = document.getElementById("capture-button");
+
+const camera = document.getElementById("camera");
+
+const canvas = document.getElementById("camera-canvas");
+
+/* STREAM */
+
+let stream;
 
 /* =========================
    SELECT FILE
@@ -25,33 +47,141 @@ selectButton.addEventListener("click", () => {
 });
 
 /* =========================
-   IMAGE UPLOAD
+   FILE UPLOAD
 ========================= */
 
 imageInput.addEventListener("change", function () {
   const file = this.files[0];
 
   if (file && file.type.startsWith("image/")) {
-    /* PREVIEW IMAGE */
-
     const reader = new FileReader();
 
     reader.onload = function (e) {
+      /* SHOW PREVIEW */
+
       previewImage.src = e.target.result;
 
       previewImage.style.display = "block";
+
+      /* HIDE CAMERA */
+
+      camera.style.display = "none";
+
+      /* HIDE TAKE SELFIE */
+
+      captureButton.style.display = "none";
+
+      /* STOP CAMERA */
+
+      if (stream) {
+        stream.getTracks().forEach((track) => track.stop());
+      }
+
+      /* UPLOADED STATE */
+
+      uploadCard.classList.add("uploaded");
+
+      /* SHOW ANALYZE */
+
+      analyzeButton.style.display = "inline-block";
     };
 
     reader.readAsDataURL(file);
-
-    /* SHOW UPLOADED STATE */
-
-    uploadCard.classList.add("uploaded");
-
-    /* SHOW BUTTON */
-
-    analyzeButton.style.display = "inline-block";
   }
+});
+
+/* =========================
+   OPEN CAMERA
+========================= */
+
+cameraButton.addEventListener("click", async () => {
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({
+      video: true,
+    });
+
+    /* SHOW CAMERA */
+
+    camera.srcObject = stream;
+
+    camera.style.display = "block";
+
+    /* SHOW TAKE SELFIE */
+
+    captureButton.style.display = "inline-block";
+
+    /* HIDE PREVIEW */
+
+    previewImage.style.display = "none";
+  } catch (error) {
+    alert("Unable to access camera.");
+
+    console.error(error);
+  }
+});
+
+/* =========================
+   TAKE SELFIE
+========================= */
+
+captureButton.addEventListener("click", () => {
+  const context = canvas.getContext("2d");
+
+  /* CANVAS SIZE */
+
+  canvas.width = camera.videoWidth;
+
+  canvas.height = camera.videoHeight;
+
+  /* DRAW FRAME */
+
+  context.drawImage(camera, 0, 0, canvas.width, canvas.height);
+
+  /* SHOW PREVIEW */
+
+  previewImage.src = canvas.toDataURL("image/jpeg");
+
+  previewImage.style.display = "block";
+
+  /* HIDE CAMERA */
+
+  camera.style.display = "none";
+
+  /* HIDE TAKE SELFIE BUTTON */
+
+  captureButton.style.display = "none";
+
+  /* STOP CAMERA */
+
+  if (stream) {
+    stream.getTracks().forEach((track) => track.stop());
+  }
+
+  /* CONVERT SELFIE TO FILE */
+
+  canvas.toBlob(
+    (blob) => {
+      const file = new File([blob], "selfie.jpg", {
+        type: "image/jpeg",
+      });
+
+      const dataTransfer = new DataTransfer();
+
+      dataTransfer.items.add(file);
+
+      imageInput.files = dataTransfer.files;
+    },
+    "image/jpeg",
+    0.9,
+  );
+
+  /* UPLOADED STATE */
+
+  uploadCard.classList.add("uploaded");
+
+  /* SHOW ANALYZE */
+
+  analyzeButton.style.display = "inline-block";
 });
 
 /* =========================
@@ -61,15 +191,33 @@ imageInput.addEventListener("change", function () {
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  /* HIDE BUTTON */
+  /* HIDE ANALYZE */
 
   analyzeButton.style.display = "none";
 
-  /* START LOADING */
+  /* HIDE TAKE SELFIE */
 
-  loadingBar.style.width = "100%";
+  captureButton.style.display = "none";
 
-  /* GO TO RESULT PAGE */
+  /* HIDE CAMERA */
+
+  camera.style.display = "none";
+
+  /* SHOW LOADING */
+
+  uploadCard.classList.add("loading");
+
+  /* RESET */
+
+  loadingBar.style.width = "0%";
+
+  /* START */
+
+  setTimeout(() => {
+    loadingBar.style.width = "100%";
+  }, 50);
+
+  /* SUBMIT */
 
   setTimeout(() => {
     form.submit();
