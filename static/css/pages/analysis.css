@@ -234,6 +234,20 @@
 }
 
 /* =========================
+   BUTTON GROUP
+========================= */
+
+.button-group {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 12px;
+}
+
+/* =========================
    PREVIEW IMAGE
 ========================= */
 
@@ -258,11 +272,48 @@
 }
 
 /* =========================
-   SELECT FILE BUTTON
+   CAMERA
 ========================= */
 
-#select-button {
+#camera {
+  width: 100%;
+
+  max-width: 320px;
+
+  height: 320px;
+
+  object-fit: cover;
+
+  border-radius: var(--radius);
+
+  border: 2px solid #ece7e2;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  margin-bottom: 28px;
+
+  display: none;
+}
+
+/* HIDE CANVAS */
+
+#camera-canvas {
+  display: none;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+#select-button,
+#camera-button {
   margin-bottom: 0;
+}
+
+/* TAKE SELFIE */
+
+#capture-button {
+  display: none;
 }
 
 /* =========================
@@ -292,9 +343,13 @@
 
 .upload-status {
   display: none;
+
   font-size: 12px;
+
   letter-spacing: 3px;
+
   text-transform: uppercase;
+
   color: #a79f98;
 }
 
@@ -308,13 +363,10 @@
   display: none;
 }
 
-/* HIDE SELECT BUTTON AFTER UPLOAD */
-
-.upload-card.uploaded #select-button {
+.upload-card.uploaded #select-button,
+.upload-card.uploaded #camera-button {
   display: none;
 }
-
-/* SHOW STATUS AFTER UPLOAD */
 
 .upload-card.uploaded .upload-status {
   display: block;
@@ -326,23 +378,29 @@
 
 .loading-wrapper {
   width: 360px;
+
   height: 4px;
+
   background: var(--primary-color);
+
   margin-bottom: 10px;
+
   overflow: hidden;
+
   display: none;
 }
 
 .loading-bar {
   width: 0%;
+
   height: 100%;
+
   background: var(--secondary-color);
+
   transition: width 3s ease;
 }
 
-/* SHOW AFTER UPLOAD */
-
-.upload-card.uploaded .loading-wrapper {
+.upload-card.loading .loading-wrapper {
   display: block;
 }
 
@@ -368,11 +426,21 @@
     font-size: 32px;
   }
 
-  .preview-image {
+  .preview-image,
+  #camera {
     height: 260px;
   }
 
   .loading-wrapper {
+    width: 100%;
+  }
+
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary {
     width: 100%;
   }
 }
