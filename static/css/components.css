@@ -33,6 +33,11 @@
     background: var(--primary-color);
 }
 
+.explore-btn {
+    padding:14px 20px;
+    white-space:nowrap;
+}
+
 /* =========================
    BASE CARD
 ========================= */

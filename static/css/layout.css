@@ -3,16 +3,8 @@
 ========================= */
 
 .main-content {
-  margin-left: var(--sidebar-width);
   padding-top: var(--navbar-height);
   min-height: 100vh;
-  transition: var(--transition);
-}
-
-/* SIDEBAR CLOSED CONTENT */
-
-.main-content.full {
-  margin-left: 0;
 }
 
 /* =========================
@@ -122,28 +114,7 @@
 ========================= */
 
 .menu-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 45px;
-  height: 45px;
-  border: none;
-  background: transparent;
-  font-size: 28px;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.menu-toggle:hover {
-  color: var(--primary-color);
-}
-
-/* =========================
-   MENU TOGGLE
-========================= */
-
-.menu-toggle {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 45px;
@@ -166,29 +137,25 @@
 .sidebar {
   position: fixed;
 
-  top: var(--navbar-height);
+  top: 0;
   left: 0;
 
-  width: var(--sidebar-width);
-  height: calc(100vh - var(--navbar-height));
+  width: 280px;
+  height: 100vh;
 
   background: var(--white);
 
-  border-right: 1px solid var(--border-color);
+  padding: 30px;
 
-  padding: 40px 30px;
-
-  overflow-y: auto;
+  transform: translateX(-100%);
 
   transition: var(--transition);
 
-  z-index: 999;
+  z-index: 1001;
 }
 
-/* SIDEBAR CLOSED */
-
-.sidebar.closed {
-  transform: translateX(-100%);
+.sidebar.active {
+  transform: translateX(0);
 }
 
 /* SIDEBAR TOP */
@@ -203,7 +170,7 @@
 
 /* CLOSE BUTTON */
 
-.close-sidebar {
+.sidebar-close {
   background: transparent;
   border: none;
 
@@ -255,7 +222,6 @@
   gap: 32px;
 }
 
-
 /* LINKS */
 
 .footer-links {
@@ -281,4 +247,18 @@
   text-align: center;
   color: var(--text-light);
   font-size: 16px;
+}
+
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.4);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.3s;
+
+  z-index: 998;
 }

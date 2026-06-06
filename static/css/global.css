@@ -47,3 +47,8 @@ section {
     margin: auto;
     padding: 0 var(--web-border);
 }
+
+img {
+  display: block;
+  max-width: 100%;
+}
