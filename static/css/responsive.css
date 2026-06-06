@@ -543,3 +543,167 @@
     padding: 8px !important;
   }
 }
+
+/* =========================
+   EXTRA SMALL DEVICES
+========================= */
+
+@media (max-width: 360px) {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* GLOBAL */
+
+  h1 {
+    font-size: 24px !important;
+    line-height: 1.15 !important;
+  }
+
+  h2 {
+    font-size: 20px !important;
+  }
+
+  p {
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+  }
+
+  /* DISCOVER */
+
+  .opening-section,
+  .analysis-section,
+  .steps-section,
+  .transformation-section,
+  .hero,
+  .cta,
+  .seasonal-profile,
+  .result-section {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .opening-section,
+  .steps-section,
+  .transformation-section,
+  .hero,
+  .cta {
+    gap: 20px !important;
+  }
+
+  .opening-right img,
+  .transform-right img,
+  .hero-image img,
+  .cta-image img {
+    height: 180px !important;
+  }
+
+  /* DISCOVER PALETTE */
+
+  .palette-colors {
+    gap: 8px !important;
+    flex-wrap: wrap;
+  }
+
+  .palette-colors span {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  /* FASHION PAGE */
+  .fashion-hero {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .fashion-hero-right {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .fashion-palette {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .fashion-palette span {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* SEASON DETAIL */
+
+  .seasonal-profile {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  .seasonal-text,
+  .seasonal-profile img {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .seasonal-profile img {
+    height: 220px !important;
+    object-fit: cover;
+  }
+
+  .swatches2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .swatch-label {
+    font-size: 10px !important;
+  }
+
+  /* RESULT PAGE */
+
+  .result-hero {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  .result-left,
+  .result-right {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .result-right img {
+    width: 100% !important;
+    height: 220px !important;
+    object-fit: cover;
+  }
+
+  .palette-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .result-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .result-buttons a {
+    width: 100%;
+  }
+
+  /* GENDER PAGE */
+
+  .gender-options {
+    grid-template-columns: 1fr !important;
+  }
+
+  .gender-card img {
+    height: 220px !important;
+  }
+}
