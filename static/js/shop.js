@@ -131,6 +131,41 @@ if (prevBtn) {
 }
 
 /* =========================
+   SWIPE SUPPORT
+========================= */
+
+const heroContainer = document.querySelector(".shop-hero-container");
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+if (heroContainer) {
+  heroContainer.addEventListener("touchstart", (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  heroContainer.addEventListener("touchend", (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+
+    const swipeDistance = touchStartX - touchEndX;
+
+    // swipe left
+    if (swipeDistance > 50) {
+      let next = currentSlide + 1;
+      if (next >= slides.length) next = 0;
+      showSlide(next);
+    }
+
+    // swipe right
+    if (swipeDistance < -50) {
+      let prev = currentSlide - 1;
+      if (prev < 0) prev = slides.length - 1;
+      showSlide(prev);
+    }
+  });
+}
+
+/* =========================
    INIT
 ========================= */
 

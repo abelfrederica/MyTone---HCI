@@ -152,6 +152,20 @@
   transition: var(--transition);
 
   z-index: 1001;
+
+  background-color: #5f554d;
+}
+
+.sidebar-menu a {
+  color: white !important;
+}
+
+.sidebar-close {
+  color: white;
+}
+
+.sidebar-menu li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .sidebar.active {
