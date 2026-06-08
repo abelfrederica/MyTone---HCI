@@ -301,6 +301,10 @@
   display: none;
 }
 
+#camera {
+  transform: scaleX(-1);
+}
+
 /* =========================
    BUTTONS
 ========================= */
