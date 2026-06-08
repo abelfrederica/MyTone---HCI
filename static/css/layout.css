@@ -171,6 +171,13 @@
   transform: translateX(0);
 }
 
+.menu-toggle,
+.menu-toggle:focus,
+.menu-toggle:active,
+.menu-toggle:hover {
+  color: #5f554d !important;
+}
+
 /* SIDEBAR TOP */
 
 .sidebar-top {
