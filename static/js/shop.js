@@ -166,6 +166,21 @@ if (heroContainer) {
 }
 
 /* =========================
+   AUTO SLIDE
+========================= */
+
+let autoSlide = setInterval(() => {
+  let next = currentSlide + 1;
+
+  if (next >= slides.length) {
+    next = 0;
+  }
+
+  showSlide(next);
+}, 5000);
+// change slide every 5 seconds
+
+/* =========================
    INIT
 ========================= */
 
