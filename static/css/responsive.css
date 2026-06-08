@@ -601,6 +601,16 @@
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px;
   }
+
+  .opening-section,
+  .analysis-section,
+  .steps-section,
+  .transformation-section,
+  .hero,
+  .cta {
+    margin: 0 !important;
+    padding: 16px !important;
+  }
 }
 
 @media (max-width: 400px) {
@@ -797,6 +807,16 @@
   .season-card img {
     height: 200px !important;
     width: 100% !important;
+  }
+
+  .opening-section,
+  .analysis-section,
+  .steps-section,
+  .transformation-section,
+  .hero,
+  .cta {
+    margin: 0 !important;
+    padding: 16px !important;
   }
 }
 
