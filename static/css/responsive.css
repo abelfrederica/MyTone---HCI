@@ -13,9 +13,28 @@
 .hero,
 .cta,
 .gender-page {
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
   padding-inline: 60px;
+}
+
+@media (max-width: 1440px) {
+  .navbar-brand {
+    margin-left: 15px;
+  }
+}
+
+.opening-section {
+  min-height: calc(100vh - var(--navbar-height)) !important;
+  display: grid !important;
+  grid-template-columns: 0.9fr 1.1fr !important;
+  align-items: center !important;
+  gap: 80px !important;
+
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+
+  padding: 60px 40px !important;
 }
 
 /* =========================
@@ -55,9 +74,17 @@
   .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .navbar-brand {
+    margin-left: 15px;
+  }
 }
 
 @media (max-width: 1024px) {
+  .navbar-brand {
+    margin-left: 0px;
+  }
+
   .navbar {
     padding-inline: 24px;
   }
@@ -119,6 +146,10 @@
 }
 
 @media (max-width: 768px) {
+  .navbar-brand {
+    margin-left: 0px;
+  }
+
   .container,
   .opening-section,
   .analysis-section,
@@ -260,10 +291,23 @@
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px;
   }
+
+  .opening-section,
+  .analysis-section,
+  .steps-section,
+  .transformation-section,
+  .hero,
+  .cta {
+    margin: 0 !important;
+    padding: 16px !important;
+  }
 }
 
 @media (max-width: 480px) {
   /* GLOBAL */
+  .navbar-brand {
+    margin-left: 0px;
+  }
 
   html,
   body {
