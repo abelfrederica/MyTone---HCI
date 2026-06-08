@@ -303,7 +303,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 486px){
   /* GLOBAL */
   .navbar-brand {
     margin-left: 0px;
@@ -657,7 +657,7 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 430px) {
   html,
   body {
     width: 100%;
