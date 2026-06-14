@@ -357,6 +357,13 @@
   color: #a79f98;
 }
 
+.upload-error {
+  display: block;
+  margin-top: 12px;
+  color: #c0392b;
+  font-size: 0.9rem;
+}
+
 /* =========================
    UPLOADED STATE
 ========================= */

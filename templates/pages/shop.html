@@ -28,7 +28,6 @@
         <h1>{{ item.title }}</h1>
 
         <p>{{ item.description }}</p>
-
       </div>
     </div>
 
@@ -39,6 +38,15 @@
     <button class="carousel-btn prev-btn">&#10094;</button>
 
     <button class="carousel-btn next-btn">&#10095;</button>
+
+    <div class="carousel-dots" id="carousel-dots">
+      {% for item in shop_data %}
+      <span
+        class="dot {% if loop.first %}active{% endif %}"
+        data-index="{{ loop.index0 }}"
+      ></span>
+      {% endfor %}
+    </div>
   </div>
 </section>
 

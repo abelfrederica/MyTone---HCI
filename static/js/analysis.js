@@ -3,13 +3,11 @@
 ========================= */
 
 const uploadCard = document.querySelector(".upload-card");
-
 const form = document.querySelector(".upload-card form");
 
 /* FILE */
 
 const imageInput = document.getElementById("image-input");
-
 const selectButton = document.getElementById("select-button");
 
 /* PREVIEW */
@@ -20,6 +18,14 @@ const previewImage = document.getElementById("preview-image");
 
 const analyzeButton = document.getElementById("analyze-button");
 
+/* RETAKE */
+
+const retakeButton = document.getElementById("retake-button");
+
+/* ERROR */
+
+const uploadError = document.getElementById("upload-error");
+
 /* LOADING */
 
 const loadingBar = document.querySelector(".loading-bar");
@@ -27,16 +33,24 @@ const loadingBar = document.querySelector(".loading-bar");
 /* CAMERA */
 
 const cameraButton = document.getElementById("camera-button");
-
 const captureButton = document.getElementById("capture-button");
-
 const camera = document.getElementById("camera");
-
 const canvas = document.getElementById("camera-canvas");
 
 /* STREAM */
 
 let stream;
+
+/* =========================
+   STOP CAMERA
+========================= */
+
+function stopCamera() {
+  if (stream) {
+    stream.getTracks().forEach((track) => track.stop());
+    stream = null;
+  }
+}
 
 /* =========================
    SELECT FILE
@@ -53,41 +67,40 @@ selectButton.addEventListener("click", () => {
 imageInput.addEventListener("change", function () {
   const file = this.files[0];
 
-  if (file && file.type.startsWith("image/")) {
-    const reader = new FileReader();
+  if (!file) return;
 
-    reader.onload = function (e) {
-      /* SHOW PREVIEW */
+  const allowedTypes = ["image/jpeg", "image/jpg", "image/png"];
 
-      previewImage.src = e.target.result;
+  if (!allowedTypes.includes(file.type)) {
+    uploadError.textContent =
+      "Unsupported file format. Please upload JPG, JPEG, or PNG.";
 
-      previewImage.style.display = "block";
-
-      /* HIDE CAMERA */
-
-      camera.style.display = "none";
-
-      /* HIDE TAKE SELFIE */
-
-      captureButton.style.display = "none";
-
-      /* STOP CAMERA */
-
-      if (stream) {
-        stream.getTracks().forEach((track) => track.stop());
-      }
-
-      /* UPLOADED STATE */
-
-      uploadCard.classList.add("uploaded");
-
-      /* SHOW ANALYZE */
-
-      analyzeButton.style.display = "inline-block";
-    };
-
-    reader.readAsDataURL(file);
+    this.value = "";
+    return;
   }
+
+  uploadError.textContent = "";
+
+  const reader = new FileReader();
+
+  reader.onload = function (e) {
+    previewImage.src = e.target.result;
+    previewImage.style.display = "block";
+
+    camera.style.display = "none";
+    captureButton.style.display = "none";
+
+    stopCamera();
+
+    uploadCard.classList.add("uploaded");
+
+    /* FILE UPLOAD = NO RETAKE */
+
+    analyzeButton.style.display = "inline-block";
+    retakeButton.style.display = "none";
+  };
+
+  reader.readAsDataURL(file);
 });
 
 /* =========================
@@ -96,27 +109,30 @@ imageInput.addEventListener("change", function () {
 
 cameraButton.addEventListener("click", async () => {
   try {
+    uploadError.textContent = "";
+
     stream = await navigator.mediaDevices.getUserMedia({
       video: true,
     });
-
-    /* SHOW CAMERA */
 
     camera.srcObject = stream;
 
     camera.style.display = "block";
 
-    /* SHOW TAKE SELFIE */
+    previewImage.style.display = "none";
 
     captureButton.style.display = "inline-block";
 
-    /* HIDE PREVIEW */
+    analyzeButton.style.display = "none";
+    retakeButton.style.display = "none";
 
-    previewImage.style.display = "none";
+    /* HANYA TAKE SELFIE */
+
+    selectButton.style.display = "none";
+    cameraButton.style.display = "none";
   } catch (error) {
-    alert("Unable to access camera.");
-
     console.error(error);
+    alert("Unable to access camera.");
   }
 });
 
@@ -127,37 +143,18 @@ cameraButton.addEventListener("click", async () => {
 captureButton.addEventListener("click", () => {
   const context = canvas.getContext("2d");
 
-  /* CANVAS SIZE */
-
   canvas.width = camera.videoWidth;
-
   canvas.height = camera.videoHeight;
-
-  /* DRAW FRAME */
 
   context.drawImage(camera, 0, 0, canvas.width, canvas.height);
 
-  /* SHOW PREVIEW */
-
   previewImage.src = canvas.toDataURL("image/jpeg");
-
   previewImage.style.display = "block";
 
-  /* HIDE CAMERA */
-
   camera.style.display = "none";
-
-  /* HIDE TAKE SELFIE BUTTON */
-
   captureButton.style.display = "none";
 
-  /* STOP CAMERA */
-
-  if (stream) {
-    stream.getTracks().forEach((track) => track.stop());
-  }
-
-  /* CONVERT SELFIE TO FILE */
+  stopCamera();
 
   canvas.toBlob(
     (blob) => {
@@ -175,13 +172,40 @@ captureButton.addEventListener("click", () => {
     0.9,
   );
 
-  /* UPLOADED STATE */
-
   uploadCard.classList.add("uploaded");
 
-  /* SHOW ANALYZE */
-
   analyzeButton.style.display = "inline-block";
+  retakeButton.style.display = "inline-block";
+});
+
+/* =========================
+   RETAKE PHOTO
+========================= */
+
+retakeButton.addEventListener("click", async () => {
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({
+      video: true,
+    });
+
+    camera.srcObject = stream;
+
+    camera.style.display = "block";
+
+    previewImage.style.display = "none";
+
+    captureButton.style.display = "inline-block";
+
+    analyzeButton.style.display = "none";
+    retakeButton.style.display = "none";
+
+    uploadCard.classList.remove("uploaded");
+
+    imageInput.value = "";
+  } catch (error) {
+    console.error(error);
+    alert("Unable to access camera.");
+  }
 });
 
 /* =========================
@@ -189,37 +213,38 @@ captureButton.addEventListener("click", () => {
 ========================= */
 
 form.addEventListener("submit", function (e) {
+  if (!imageInput.files.length) {
+    e.preventDefault();
+
+    uploadError.textContent = "Please upload or capture a photo first.";
+
+    return;
+  }
+
   e.preventDefault();
 
-  /* HIDE ANALYZE */
-
   analyzeButton.style.display = "none";
-
-  /* HIDE TAKE SELFIE */
-
+  retakeButton.style.display = "none";
   captureButton.style.display = "none";
-
-  /* HIDE CAMERA */
-
   camera.style.display = "none";
-
-  /* SHOW LOADING */
 
   uploadCard.classList.add("loading");
 
-  /* RESET */
-
   loadingBar.style.width = "0%";
-
-  /* START */
 
   setTimeout(() => {
     loadingBar.style.width = "100%";
   }, 50);
 
-  /* SUBMIT */
-
   setTimeout(() => {
     form.submit();
   }, 3000);
+});
+
+/* =========================
+   CLEANUP
+========================= */
+
+window.addEventListener("beforeunload", () => {
+  stopCamera();
 });

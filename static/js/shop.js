@@ -165,20 +165,37 @@ if (heroContainer) {
   });
 }
 
-/* =========================
-   AUTO SLIDE
-========================= */
+const dots = document.querySelectorAll(".dot");
 
-let autoSlide = setInterval(() => {
-  let next = currentSlide + 1;
+function showSlide(index) {
+  slides.forEach((s) => s.classList.remove("active"));
 
-  if (next >= slides.length) {
-    next = 0;
+  dots.forEach((dot) => dot.classList.remove("active"));
+
+  if (!slides[index]) return;
+
+  slides[index].classList.add("active");
+
+  if (dots[index]) {
+    dots[index].classList.add("active");
   }
 
-  showSlide(next);
-}, 5000);
-// change slide every 5 seconds
+  currentSlide = index;
+
+  expanded = false;
+  productGrid.classList.remove("expanded");
+
+  const text = exploreBtn.querySelector("span");
+  if (text) text.textContent = "EXPLORE MORE";
+
+  updateShopContent(index);
+}
+
+dots.forEach((dot) => {
+  dot.addEventListener("click", () => {
+    showSlide(Number(dot.dataset.index));
+  });
+});
 
 /* =========================
    INIT
