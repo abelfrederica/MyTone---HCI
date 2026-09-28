@@ -9,3 +9,6 @@ license: mit
 ---
 
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+
+Link web-prototype : 
+https://abel-lucy-mytone-web.hf.space/ 
